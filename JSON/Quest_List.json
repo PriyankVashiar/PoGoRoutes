@@ -1092,7 +1092,7 @@
     "https://sydneypogomap.com": true,
     "https://sgpokemap.com": false,
     "https://londonpogomap.com": true,
-    "https://nycpokemap.com": true,
+    "https://nycpokemap.com": false,
     "https://vanpokemap.com": true
   }
 }
