@@ -1089,7 +1089,7 @@
     }
   },
   "city_status": {
-    "https://sydneypogomap.com": true,
+    "https://sydneypogomap.com": false,
     "https://sgpokemap.com": false,
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
