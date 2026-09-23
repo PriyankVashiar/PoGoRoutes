@@ -305,7 +305,8 @@
       "133": {
         "0": [
           "Send 3 Gifts and add a sticker to each",
-          "Evolve a Pokémon"
+          "Evolve a Pokémon",
+          "Catch 10 Fire-type Pokémon"
         ]
       },
       "587": {
@@ -402,7 +403,8 @@
       },
       "926": {
         "0": [
-          "Hatch an Egg"
+          "Hatch an Egg",
+          "Catch 10 Fire-type Pokémon"
         ]
       },
       "686": {
@@ -580,7 +582,9 @@
       },
       "4": {
         "0": [
-          "Power up Pokémon 3 times"
+          "Power up Pokémon 3 times",
+          "Make an Excellent Throw",
+          "Catch 10 Fire-type Pokémon"
         ]
       },
       "434": {
@@ -814,7 +818,8 @@
       },
       "932": {
         "0": [
-          "Spin 5 PokéStops"
+          "Spin 5 PokéStops",
+          "Make 5 Great Throws"
         ]
       },
       "64": {
@@ -974,6 +979,56 @@
         "0": [
           "Earn 2 Candies walking with your buddy"
         ]
+      },
+      "912": {
+        "0": [
+          "Make 5 Great Throws"
+        ]
+      },
+      "940": {
+        "0": [
+          "Catch 10 Fire-type Pokémon"
+        ]
+      },
+      "906": {
+        "0": [
+          "Make 5 Great Throws"
+        ]
+      },
+      "113": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "909": {
+        "0": [
+          "Make 5 Great Throws"
+        ]
+      },
+      "25": {
+        "0": [
+          "Win 2 raids"
+        ]
+      },
+      "111": {
+        "0": [
+          "Make 5 Great Throws"
+        ]
+      },
+      "957": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "856": {
+        "0": [
+          "Catch 10 Fire-type Pokémon"
+        ]
+      },
+      "744": {
+        "0": [
+          "Win a raid"
+        ]
       }
     },
     "12": {
@@ -1032,5 +1087,12 @@
         ]
       }
     }
+  },
+  "city_status": {
+    "https://sydneypogomap.com": true,
+    "https://sgpokemap.com": true,
+    "https://londonpogomap.com": true,
+    "https://nycpokemap.com": true,
+    "https://vanpokemap.com": true
   }
 }
