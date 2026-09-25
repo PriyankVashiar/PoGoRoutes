@@ -57,7 +57,10 @@
           "Make 3 Great Throws in a row",
           "Make 3 Great Curveball Throws",
           "Catch 8 Pokémon",
-          "Send 3 Gifts to friends"
+          "Send 3 Gifts to friends",
+          "Explore 1 km",
+          "Defeat a Team GO Rocket Grunt",
+          "Make 5 Nice Throws"
         ]
       },
       "3": {
@@ -979,56 +982,6 @@
         "0": [
           "Earn 2 Candies walking with your buddy"
         ]
-      },
-      "912": {
-        "0": [
-          "Make 5 Great Throws"
-        ]
-      },
-      "940": {
-        "0": [
-          "Catch 10 Fire-type Pokémon"
-        ]
-      },
-      "906": {
-        "0": [
-          "Make 5 Great Throws"
-        ]
-      },
-      "113": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "909": {
-        "0": [
-          "Make 5 Great Throws"
-        ]
-      },
-      "25": {
-        "0": [
-          "Win 2 raids"
-        ]
-      },
-      "111": {
-        "0": [
-          "Make 5 Great Throws"
-        ]
-      },
-      "957": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "856": {
-        "0": [
-          "Catch 10 Fire-type Pokémon"
-        ]
-      },
-      "744": {
-        "0": [
-          "Win a raid"
-        ]
       }
     },
     "12": {
@@ -1087,5 +1040,12 @@
         ]
       }
     }
+  },
+  "city_status": {
+    "https://sydneypogomap.com": true,
+    "https://sgpokemap.com": true,
+    "https://londonpogomap.com": true,
+    "https://nycpokemap.com": true,
+    "https://vanpokemap.com": true
   }
 }
