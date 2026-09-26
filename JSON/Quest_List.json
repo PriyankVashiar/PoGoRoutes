@@ -982,7 +982,9 @@
         "0": [
           "Earn 2 Candies walking with your buddy"
         ]
-      }
+      },
+      "708": {},
+      "420": {}
     },
     "12": {
       "18": {
@@ -1044,7 +1046,7 @@
   "city_status": {
     "https://sydneypogomap.com": true,
     "https://sgpokemap.com": true,
-    "https://londonpogomap.com": false,
+    "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
     "https://vanpokemap.com": true
   }
