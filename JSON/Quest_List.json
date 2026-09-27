@@ -982,9 +982,7 @@
         "0": [
           "Earn 2 Candies walking with your buddy"
         ]
-      },
-      "708": {},
-      "420": {}
+      }
     },
     "12": {
       "18": {
@@ -1048,6 +1046,6 @@
     "https://sgpokemap.com": true,
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
-    "https://vanpokemap.com": false
+    "https://vanpokemap.com": true
   }
 }
