@@ -134,7 +134,8 @@
         ]
       },
       "1151": {},
-      "1155": {}
+      "1155": {},
+      "1152": {}
     },
     "3": {
       "0": {
@@ -1049,7 +1050,7 @@
     "https://sydneypogomap.com": true,
     "https://sgpokemap.com": true,
     "https://londonpogomap.com": true,
-    "https://nycpokemap.com": false,
+    "https://nycpokemap.com": true,
     "https://vanpokemap.com": true
   }
 }
