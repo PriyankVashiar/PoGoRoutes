@@ -132,7 +132,9 @@
           "Make 3 Great Curveball Throws",
           "Make 3 Great Throws in a row"
         ]
-      }
+      },
+      "1151": {},
+      "1155": {}
     },
     "3": {
       "0": {
@@ -982,7 +984,9 @@
         "0": [
           "Earn 2 Candies walking with your buddy"
         ]
-      }
+      },
+      "840": {},
+      "590": {}
     },
     "12": {
       "18": {
@@ -1044,7 +1048,7 @@
   "city_status": {
     "https://sydneypogomap.com": true,
     "https://sgpokemap.com": true,
-    "https://londonpogomap.com": false,
+    "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
     "https://vanpokemap.com": true
   }
