@@ -147,6 +147,21 @@
         "1": [
           "Use 20 Berries to help catch Pokémon"
         ]
+      },
+      "1201": {
+        "1": [
+          "Purify 3 Shadow Pokémon"
+        ]
+      },
+      "1501": {
+        "1": [
+          "Defeat a Team GO Rocket Grunt"
+        ]
+      },
+      "1202": {
+        "1": [
+          "Purify 3 Shadow Pokémon"
+        ]
       }
     },
     "3": {
@@ -1070,7 +1085,7 @@
     }
   },
   "city_status": {
-    "https://sydneypogomap.com": false,
+    "https://sydneypogomap.com": true,
     "https://sgpokemap.com": false,
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
