@@ -1020,6 +1020,11 @@
         "0": [
           "Catch 5 Grass-type Pokémon"
         ]
+      },
+      "371": {
+        "0": [
+          "Catch a Dragon-type Pokémon"
+        ]
       }
     },
     "12": {
@@ -1084,6 +1089,6 @@
     "https://sgpokemap.com": true,
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
-    "https://vanpokemap.com": false
+    "https://vanpokemap.com": true
   }
 }
