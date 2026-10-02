@@ -970,11 +970,6 @@
           "Make 10 Nice Throws"
         ]
       },
-      "371": {
-        "0": [
-          "Catch a Dragon-type Pokémon"
-        ]
-      },
       "443": {
         "0": [
           "Make 3 Excellent Throws in a row"
@@ -1088,7 +1083,7 @@
     "https://sydneypogomap.com": true,
     "https://sgpokemap.com": true,
     "https://londonpogomap.com": true,
-    "https://nycpokemap.com": false,
+    "https://nycpokemap.com": true,
     "https://vanpokemap.com": true
   }
 }
