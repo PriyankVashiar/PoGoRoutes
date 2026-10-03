@@ -1089,6 +1089,9 @@
     "https://sgpokemap.com": true,
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
-    "https://vanpokemap.com": true
+    "https://vanpokemap.com": {
+      "state": "available",
+      "updated_at": "2026-10-03T08:00:36Z"
+    }
   }
 }

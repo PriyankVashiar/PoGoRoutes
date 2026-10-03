@@ -1090,8 +1090,8 @@
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
     "https://vanpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-10-03T06:59:18Z"
+      "state": "available",
+      "updated_at": "2026-10-03T08:00:36Z"
     }
   }
 }
