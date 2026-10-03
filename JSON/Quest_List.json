@@ -1089,7 +1089,10 @@
       "state": "empty",
       "updated_at": "2026-10-03T13:59:24Z"
     },
-    "https://sgpokemap.com": true,
+    "https://sgpokemap.com": {
+      "state": "empty",
+      "updated_at": "2026-10-03T15:59:21Z"
+    },
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
     "https://vanpokemap.com": {
