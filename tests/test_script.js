@@ -7,6 +7,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const test = require('node:test');
 const { TextEncoder } = require('node:util');
+const zlib = require('node:zlib');
 
 const ROOT = path.resolve(__dirname, '..');
 const scriptSource = fs.readFileSync(path.join(ROOT, 'script.js'), 'utf8');
@@ -55,6 +56,17 @@ test('shared city configuration supplies frontend metadata and route settings', 
     assert.equal(nyc.tz, 'America/New_York');
     assert.equal(nyc.route.hexSizeMeters, 700);
     assert.ok(Number.isFinite(nyc.route.bounds.minLat));
+});
+
+test('city availability distinguishes empty data from scraper failures and supports legacy booleans', () => {
+    const context = makeContext();
+
+    assert.equal(context.normalizeCityStatus(true), 'available');
+    assert.equal(context.normalizeCityStatus(false), 'empty');
+    assert.equal(context.normalizeCityStatus({ state: 'available' }), 'available');
+    assert.equal(context.normalizeCityStatus({ state: 'empty' }), 'empty');
+    assert.equal(context.normalizeCityStatus({ state: 'error' }), 'error');
+    assert.equal(context.normalizeCityStatus({ state: 'unexpected' }), 'available');
 });
 
 test('GPX builder emits well-formed XML and escapes route names', () => {
@@ -207,4 +219,20 @@ test('GPS Joystick direct-import fallback preserves GPX payload', async () => {
     const encoded = params.get('data');
     const padded = encoded.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - encoded.length % 4) % 4);
     assert.equal(Buffer.from(padded, 'base64').toString('utf8'), gpx);
+});
+
+test('GPS Joystick gzip payload round-trips to the original GPX', async () => {
+    const context = makeContext();
+    context.CompressionStream = CompressionStream;
+    context.Blob = Blob;
+    context.Response = Response;
+
+    const gpx = '<?xml version="1.0"?><gpx><rte><name>2026-10-03-nyc</name></rte></gpx>';
+    const payload = await context.encodeGpsJoystickPayload(gpx);
+
+    assert.equal(payload.encoding, 'gzip-base64url');
+    const encoded = payload.data;
+    const padded = encoded.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - encoded.length % 4) % 4);
+    const compressed = Buffer.from(padded, 'base64');
+    assert.equal(zlib.gunzipSync(compressed).toString('utf8'), gpx);
 });

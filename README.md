@@ -96,7 +96,7 @@ Item icons are served locally under `assets/icons/`.
 The single source of truth for supported cities. It defines each city key, display name, map endpoint, IANA timezone, reset window, hex-grid size, and route geofence bounds. The frontend loads it to build the city selector, `script.js` passes the selected route configuration to `worker.js`, and `map_scraper.py` loads the same file for scraper endpoints.
 
 ### `map_scraper.py` (Data Ingestion)
-A Python script that fetches live JSON data from external Pokémon GO map providers. It processes the raw payloads, normalizes quest conditions and rewards (items, stardust, encounters), and writes clean snapshot files (`JSON/<city>_quests.json`). It loads supported map endpoints from `JSON/cities.json` and maintains a master `Quest_List.json` that the frontend uses to dynamically generate filter checkboxes and track which cities are currently missing quests (`city_status`).
+A Python script that fetches live JSON data from external Pokémon GO map providers. It processes the raw payloads, normalizes quest conditions and rewards (items, stardust, encounters), and writes clean snapshot files (`JSON/<city>_quests.json`). It loads supported map endpoints from `JSON/cities.json` and maintains a master `Quest_List.json` that the frontend uses to dynamically generate filter checkboxes. `city_status` records `available`, `empty`, or `error` for each map endpoint (with an update timestamp), so a scraper/API failure is not presented as a genuine zero-quest result. The frontend remains backward-compatible with the older boolean status values.
 
 ### `index.html` & `style.css` (User Interface)
 A lightweight, responsive frontend that presents the available cities and dynamically loads available filters. It supports saving/loading presets to `localStorage` and includes interactive elements like custom start coordinates and real-time generation status.
@@ -158,7 +158,7 @@ Dated copies are stored under `JSON/archive/YYYY-MM-DD/` (7-day retention).
 
 ### 3. Running Regression Tests
 
-The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, GPX XML generation, GPS Joystick direct-import encoding, and safe quest-condition refresh behavior.
+The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, post-geofence empty routes, TSP start-index rebuilding, GPX XML generation, both GPS Joystick direct-import encodings, structured city availability states, and safe quest-condition refresh behavior. The runner removes Python bytecode caches before and after execution and disables bytecode generation, keeping `tests/` clean for source packaging.
 
 ```bash
 ./tests/run-tests.sh

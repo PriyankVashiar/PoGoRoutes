@@ -118,6 +118,36 @@ test('worker output never duplicates a stop', () => {
     assert.equal(new Set(names).size, names.length);
 });
 
+test('custom start does not produce a start-only route when every quest is outside the geofence', () => {
+    const { context, posted } = loadWorkerContext();
+    const start = { lat: 40.7484, lng: -73.9857, name: 'Start Location' };
+    const outsideQuest = { lat: 0, lng: 0, name: 'Outside Geofence' };
+
+    const result = runWorker(context, posted, {
+        isCustom: true,
+        points: [start, outsideQuest]
+    });
+
+    assert.deepEqual(Array.from(result), []);
+});
+
+test('TSP start candidates are rebuilt after pruning shifts point indices', () => {
+    const { context, posted } = loadWorkerContext();
+    let capturedStartIndices = null;
+
+    context.pruneOutliers = points => points.slice(1);
+    context.solveTSP = (points, options) => {
+        capturedStartIndices = Array.from(options.startIndices);
+        return points;
+    };
+    context.pruneRouteDetours = route => route;
+
+    const result = runWorker(context, posted, { points: compactNycPoints(12) });
+
+    assert.equal(result.length, 11);
+    assert.deepEqual(capturedStartIndices, [0, 1, 3, 5, 7, 9]);
+});
+
 test('fixed city projection stays close to haversine distance', () => {
     const { context } = loadWorkerContext();
     const grid = context.getHexGrid('nyc', cityConfigs.nyc.route);

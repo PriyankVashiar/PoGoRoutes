@@ -53,6 +53,10 @@ zip -r "$OUTPUT_PATH" "${include_paths[@]}" \
     'JSON/uk_quests.json' \
     'JSON/vc_quests.json' \
     'create-code-zip.sh' \
+    '*/__pycache__/' \
+    '*/__pycache__/*' \
+    '*.pyc' \
+    '*.pyo' \
     "$OUTPUT_NAME"
 
 echo

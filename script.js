@@ -169,6 +169,22 @@ function getCityTimeInfo(tz, resetHour, resetMinute) {
     return { isResetting, msUntilMidnight };
 }
 
+function normalizeCityStatus(rawStatus) {
+    // Backward compatibility with the original boolean city_status schema.
+    if (rawStatus === true || rawStatus == null) return 'available';
+    if (rawStatus === false) return 'empty';
+
+    if (typeof rawStatus === 'object') {
+        const state = String(rawStatus.state || '').toLowerCase();
+        if (state === 'available' || state === 'empty' || state === 'error') {
+            return state;
+        }
+    }
+
+    // Unknown status values should not unexpectedly lock a city out.
+    return 'available';
+}
+
 function updateCityDropdownAvailability() {
     const select = document.getElementById('city-select');
     if (!select) return;
@@ -180,19 +196,27 @@ function updateCityDropdownAvailability() {
         const config = getCityConfig(option.value);
         if (!config) continue;
 
-        const isScraperEmpty = questListCityStatus[config.url] === false;
+        const scraperState = normalizeCityStatus(questListCityStatus[config.url]);
         const info = getCityTimeInfo(config.tz, config.resetHour, config.resetMinute);
+        const isDisabled = info.isResetting || scraperState === 'empty' || scraperState === 'error';
 
-        const isDisabled = info.isResetting || isScraperEmpty;
+        const baseText = option.text
+            .replace(' (Updating...)', '')
+            .replace(' (No Quests)', '')
+            .replace(' (Unavailable)', '');
 
         if (isDisabled) {
             option.disabled = true;
-            let baseText = option.text.replace(' (Updating...)', '').replace(' (No Quests)', '');
-            option.text = baseText + (info.isResetting ? ' (Updating...)' : ' (No Quests)');
+            const suffix = info.isResetting
+                ? ' (Updating...)'
+                : scraperState === 'error'
+                    ? ' (Unavailable)'
+                    : ' (No Quests)';
+            option.text = baseText + suffix;
         } else {
             option.disabled = false;
-            option.text = option.text.replace(' (Updating...)', '').replace(' (No Quests)', '');
-            
+            option.text = baseText;
+
             if (!firstAvailable) firstAvailable = option.value;
             if (option.value === select.value) isCurrentAvailable = true;
         }

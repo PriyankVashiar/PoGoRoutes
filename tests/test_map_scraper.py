@@ -128,14 +128,29 @@ class QuestListRefreshTests(unittest.TestCase):
         self.assertEqual(conditions, ["OLD CONDITION"])
         self.assertNotIn("NEW CONDITION", conditions)
 
-        # The second scrape in CITIES order is Vancouver. Its previous True
-        # status must not survive a failed refresh. Successful cities remain True.
-        self.assertFalse(
-            final_quest_list["city_status"][map_scraper.CITIES["vc"]["url"]]
+        # The second scrape in CITIES order is Vancouver. A scraper failure is
+        # distinct from a successful empty result, while successful cities remain
+        # explicitly available.
+        self.assertEqual(
+            final_quest_list["city_status"][map_scraper.CITIES["vc"]["url"]]["state"],
+            "error",
         )
-        self.assertTrue(
-            final_quest_list["city_status"][map_scraper.CITIES["nyc"]["url"]]
+        self.assertEqual(
+            final_quest_list["city_status"][map_scraper.CITIES["nyc"]["url"]]["state"],
+            "available",
         )
+        vc_status = final_quest_list["city_status"][map_scraper.CITIES["vc"]["url"]]
+        self.assertTrue(vc_status["updated_at"].endswith("Z"))
+
+    def test_successful_empty_scrape_is_distinct_from_scraper_failure(self):
+        exit_code, final_quest_list = self.run_main(lambda _city_key, _working: False)
+
+        self.assertEqual(exit_code, 0)
+        for config in map_scraper.CITIES.values():
+            self.assertEqual(
+                final_quest_list["city_status"][config["url"]]["state"],
+                "empty",
+            )
 
 
 class ScraperDurabilityTests(unittest.TestCase):

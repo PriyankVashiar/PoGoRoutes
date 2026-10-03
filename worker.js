@@ -995,7 +995,9 @@ self.onmessage = function (e) {
     questPoints = filterPoints(questPoints, baseGrid);
 
     if (questPoints.length === 0) {
-        self.postMessage(isCustom ? [startPoint] : []);
+        // A custom start is only meaningful when at least one quest destination
+        // survives the city geofence. Never emit a start-only route.
+        self.postMessage([]);
         return;
     }
 
@@ -1049,14 +1051,21 @@ self.onmessage = function (e) {
     // Returns points projected with the city's fixed origin/reference latitude.
     targetPoints = pruneOutliers(targetPoints, baseGrid, isCustom);
 
-    // Re-map candidate start indices after pruning
-    // Use simple bounds check since pruning only removes elements
-    candidateStartIndices = candidateStartIndices.filter(i => i < targetPoints.length);
-    if (candidateStartIndices.length === 0) candidateStartIndices = [0];
-
     if (targetPoints.length === 0) {
         self.postMessage([]);
         return;
+    }
+
+    // Pruning can remove points from anywhere in the array, shifting every later
+    // index. Rebuild candidates from the post-pruning array rather than carrying
+    // stale clustering indices into the TSP solver.
+    if (isCustom) {
+        candidateStartIndices = [0];
+    } else {
+        candidateStartIndices = pickStartIndices(
+            targetPoints.length,
+            Math.min(6, targetPoints.length)
+        );
     }
 
     // --- Solve TSP ---

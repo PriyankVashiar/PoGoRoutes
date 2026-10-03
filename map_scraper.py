@@ -88,6 +88,20 @@ DEFAULT_HEADERS = {
 MAX_RETRIES = 4
 BASE_BACKOFF_SECONDS = 1.5
 REQUEST_TIMEOUT_SECONDS = 45
+CITY_STATUS_STATES = {"available", "empty", "error"}
+
+
+def make_city_status(state: str) -> dict[str, str]:
+    """Return a structured city availability status for Quest_List.json."""
+    if state not in CITY_STATUS_STATES:
+        raise ValueError(f"Unsupported city status: {state}")
+    updated_at = (
+        datetime.now(timezone.utc)
+        .isoformat(timespec="seconds")
+        .replace("+00:00", "Z")
+    )
+    return {"state": state, "updated_at": updated_at}
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -377,6 +391,8 @@ def main() -> int:
     
     if is_archive_mode:
         city_status = quest_list.get("city_status", {})
+        if not isinstance(city_status, dict):
+            city_status = {}
         for city_key in city_keys:
             out_filename = f"{city_key}_quests.json"
             out_path = os.path.join(JSON_DIR, out_filename)
@@ -391,7 +407,7 @@ def main() -> int:
             
             empty_data = {"quests": [], "meta": {"time": int(datetime.now(timezone.utc).timestamp())}}
             write_json(out_path, empty_data)
-            city_status[CITIES[city_key]["url"]] = False
+            city_status[CITIES[city_key]["url"]] = make_city_status("empty")
             log.info("Cleared %s", out_filename)
             
         quest_list["city_status"] = city_status
@@ -440,17 +456,20 @@ def main() -> int:
         update_quest_list_structure(working_quest_list, merged, allow_pruning=allow_pruning)
 
     city_status = quest_list.get("city_status", {})
+    if not isinstance(city_status, dict):
+        city_status = {}
 
     scrape_errors = []
     for city_key in city_keys:
         try:
             has_quests = scrape_city(city_key, working_quest_list)
-            city_status[CITIES[city_key]["url"]] = has_quests
+            city_status[CITIES[city_key]["url"]] = make_city_status(
+                "available" if has_quests else "empty"
+            )
         except Exception as exp:
-            # A failed scrape must not leave a stale successful status from a
-            # previous run. Mark the city unavailable immediately; a later
-            # successful scrape will set it back to True when quests are found.
-            city_status[CITIES[city_key]["url"]] = False
+            # Distinguish scraper/API failures from a successful scrape that
+            # genuinely returned zero quests.
+            city_status[CITIES[city_key]["url"]] = make_city_status("error")
             scrape_errors.append(f"{city_key}: {exp}")
             log.error("Scrape failed for %s: %s", city_key, exp)
 
