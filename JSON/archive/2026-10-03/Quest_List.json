@@ -132,6 +132,36 @@
           "Make 3 Great Curveball Throws",
           "Make 3 Great Throws in a row"
         ]
+      },
+      "1151": {
+        "1": [
+          "Use 20 Berries to help catch Pokémon"
+        ]
+      },
+      "1155": {
+        "1": [
+          "Use 20 Berries to help catch Pokémon"
+        ]
+      },
+      "1152": {
+        "1": [
+          "Use 20 Berries to help catch Pokémon"
+        ]
+      },
+      "1201": {
+        "1": [
+          "Purify 3 Shadow Pokémon"
+        ]
+      },
+      "1501": {
+        "1": [
+          "Defeat a Team GO Rocket Grunt"
+        ]
+      },
+      "1202": {
+        "1": [
+          "Purify 3 Shadow Pokémon"
+        ]
       }
     },
     "3": {
@@ -445,7 +475,9 @@
       "928": {
         "0": [
           "Catch 10 Grass-type Pokémon",
-          "Catch 7 different species of Pokémon"
+          "Catch 7 different species of Pokémon",
+          "Catch 5 Grass-type Pokémon",
+          "Use 10 Berries to help catch Pokémon"
         ]
       },
       "129": {
@@ -914,7 +946,8 @@
       },
       "819": {
         "0": [
-          "Spin 5 PokéStops"
+          "Spin 5 PokéStops",
+          "Catch 5 Grass-type Pokémon"
         ]
       },
       "37": {
@@ -935,11 +968,6 @@
       "732": {
         "0": [
           "Make 10 Nice Throws"
-        ]
-      },
-      "371": {
-        "0": [
-          "Catch a Dragon-type Pokémon"
         ]
       },
       "443": {
@@ -981,6 +1009,21 @@
       "667": {
         "0": [
           "Earn 2 Candies walking with your buddy"
+        ]
+      },
+      "840": {
+        "0": [
+          "Catch 15 Grass-type Pokémon"
+        ]
+      },
+      "590": {
+        "0": [
+          "Catch 5 Grass-type Pokémon"
+        ]
+      },
+      "371": {
+        "0": [
+          "Catch a Dragon-type Pokémon"
         ]
       }
     },
