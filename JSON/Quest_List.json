@@ -1093,7 +1093,10 @@
       "state": "available",
       "updated_at": "2026-10-03T20:30:41Z"
     },
-    "https://londonpogomap.com": true,
+    "https://londonpogomap.com": {
+      "state": "empty",
+      "updated_at": "2026-10-03T22:59:27Z"
+    },
     "https://nycpokemap.com": true,
     "https://vanpokemap.com": {
       "state": "available",
