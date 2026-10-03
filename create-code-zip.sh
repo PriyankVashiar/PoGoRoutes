@@ -19,12 +19,14 @@ include_paths=(
     README.md
     assets
     JSON/Quest_List.json
+    JSON/cities.json
     .gitignore
     index.html
     map_scraper.py
     requirements.txt
     script.js
     style.css
+    tests
     worker.js
 )
 

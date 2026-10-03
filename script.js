@@ -3,22 +3,13 @@ let questList = {};
 let questListCityStatus = {};
 let pokedexMap = {};
 let timerInterval = null;
+let cityConfigsByKey = {};
+let defaultCityKey = '';
 
 const DONATE_URL = 'https://buymeacoffee.com/priyankvashiar';
 const GPS_JOYSTICK_PACKAGE = 'com.priyank.gpsjoystick';
 const GPS_JOYSTICK_SCHEME = 'gpsjoystick';
 const GPS_JOYSTICK_IMPORT_VERSION = '1';
-
-const POKEMON_ARTWORK_CDN =
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
-
-const CITY_CONFIGS = {
-    "https://nycpokemap.com": { cityKey: "nyc", name: "New York", tz: "America/New_York", resetHour: 1, resetMinute: 0 },
-    "https://vanpokemap.com": { cityKey: "vc", name: "Vancouver", tz: "America/Vancouver", resetHour: 1, resetMinute: 0 },
-    "https://sgpokemap.com": { cityKey: "sg", name: "Singapore", tz: "Asia/Singapore", resetHour: 3, resetMinute: 30 },
-    "https://sydneypogomap.com": { cityKey: "syd", name: "Sydney", tz: "Australia/Sydney", resetHour: 3, resetMinute: 30 },
-    "https://londonpogomap.com": { cityKey: "uk", name: "London", tz: "Europe/London", resetHour: 1, resetMinute: 0 }
-};
 
 const ITEM_DETAILS = {
     "1": { name: "Poké Ball", file: "Poké_Ball.png" },
@@ -42,6 +33,24 @@ const escapeXml = (str) => String(str || '')
 
 const pad = (num) => String(num).padStart(2, '0');
 
+function getDateStringInTimeZone(tz, date = new Date()) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: tz,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    }).formatToParts(date);
+
+    const values = {};
+    for (const part of parts) {
+        if (part.type === 'year' || part.type === 'month' || part.type === 'day') {
+            values[part.type] = part.value;
+        }
+    }
+
+    return `${values.year}-${values.month}-${values.day}`;
+}
+
 const POKEMON_GO_ASSETS_CDN =
     'https://raw.githubusercontent.com/pokemon-go-api/assets/main/Pokemon';
 
@@ -53,12 +62,65 @@ function getPokemonGoSpriteUrl(pokemonId) {
     return `${POKEMON_GO_ASSETS_CDN}/pm${id}.icon.png`;
 }
 
+function configureCities(payload) {
+    if (!payload || !Array.isArray(payload.cities) || payload.cities.length === 0) {
+        throw new Error('City configuration must contain a non-empty cities array.');
+    }
+
+    const byKey = {};
+    for (const city of payload.cities) {
+        const bounds = city?.route?.bounds;
+        const numericFields = [
+            city?.resetHour, city?.resetMinute, city?.route?.hexSizeMeters,
+            bounds?.minLat, bounds?.maxLat, bounds?.minLng, bounds?.maxLng
+        ];
+
+        if (
+            !city?.cityKey || !city?.name || !city?.url || !city?.tz ||
+            !bounds || numericFields.some(value => !Number.isFinite(value))
+        ) {
+            throw new Error('City configuration contains an incomplete city entry.');
+        }
+        if (byKey[city.cityKey]) {
+            throw new Error(`Duplicate city key in configuration: ${city.cityKey}`);
+        }
+        byKey[city.cityKey] = city;
+    }
+
+    if (!payload.defaultCity || !byKey[payload.defaultCity]) {
+        throw new Error('City configuration has an invalid defaultCity.');
+    }
+
+    cityConfigsByKey = byKey;
+    defaultCityKey = payload.defaultCity;
+}
+
+function populateCityDropdown() {
+    const select = document.getElementById('city-select');
+    if (!select) return;
+
+    select.replaceChildren();
+    for (const city of Object.values(cityConfigsByKey)) {
+        const option = document.createElement('option');
+        option.value = city.cityKey;
+        option.textContent = city.name;
+        option.selected = city.cityKey === defaultCityKey;
+        select.appendChild(option);
+    }
+}
+
+function getCityConfig(cityKey) {
+    return cityConfigsByKey[cityKey] || null;
+}
+
 function getSelectedCityConfig() {
     const select = document.getElementById('city-select');
-    const url = select ? select.value : "https://nycpokemap.com";
-    return {
-        ...(CITY_CONFIGS[url] || CITY_CONFIGS["https://nycpokemap.com"])
-    };
+    const selectedKey = select?.value || defaultCityKey;
+    const config = getCityConfig(selectedKey) || getCityConfig(defaultCityKey);
+    if (!config) {
+        throw new Error('City configuration has not been loaded.');
+    }
+    return config;
 }
 
 function setStatus(message, type = 'info', detail = '') {
@@ -115,10 +177,10 @@ function updateCityDropdownAvailability() {
     let isCurrentAvailable = false;
 
     for (const option of select.options) {
-        const config = CITY_CONFIGS[option.value];
+        const config = getCityConfig(option.value);
         if (!config) continue;
 
-        const isScraperEmpty = questListCityStatus[option.value] === false;
+        const isScraperEmpty = questListCityStatus[config.url] === false;
         const info = getCityTimeInfo(config.tz, config.resetHour, config.resetMinute);
 
         const isDisabled = info.isResetting || isScraperEmpty;
@@ -602,7 +664,7 @@ function getCustomStartLocation() {
 function buildGpxRoute(optimizedRoute, city, todayStr) {
     const gpxParts = [
         '<?xml version="1.0" encoding="UTF-8"?>\n',
-        '<gpx version="1.1" creator="Priyank Vashiar">\n',
+        '<gpx version="1.1" creator="Priyank Vashiar" xmlns="http://www.topografix.com/GPX/1/1">\n',
         '  <rte>\n',
         `    <name>${escapeXml(city.name)} Quest Route ${todayStr}</name>\n`
     ];
@@ -740,7 +802,7 @@ async function handleRouteGeneration(outputMode = 'download') {
         setBusy(`Fetching ${city.name} Quests...`);
         setStatus(`Fetching ${city.name} quest data…`);
 
-        const todayStr = new Date().toISOString().split('T')[0];
+        const todayStr = getDateStringInTimeZone(city.tz);
         const res = await fetch(`./JSON/${city.cityKey}_quests.json?v=${Date.now()}`);
 
         if (!res.ok) {
@@ -773,7 +835,7 @@ async function handleRouteGeneration(outputMode = 'download') {
         }
 
         const stopCount = isCustom ? matchedCoords.length - 1 : matchedCoords.length;
-        if (matchedCoords.length < 1) {
+        if (stopCount === 0) {
             setStatus(`No matching Pokéstops in ${city.name} for the selected filters.`, 'error');
             return;
         }
@@ -792,7 +854,7 @@ async function handleRouteGeneration(outputMode = 'download') {
 
         setBusy('Optimizing Route...');
 
-        worker = new Worker(`./worker.js?v=${Date.now()}`);
+        worker = new Worker('./worker.js');
 
         const optimizedRoute = await new Promise((resolve, reject) => {
             worker.onmessage = (e) => {
@@ -808,6 +870,7 @@ async function handleRouteGeneration(outputMode = 'download') {
             worker.postMessage({
                 points: matchedCoords,
                 city: city.cityKey,
+                cityConfig: city.route,
                 isCustom: isCustom,
                 timeLimitMs: 8000
             });
@@ -869,31 +932,57 @@ function bindUiEvents() {
 
 async function init() {
     bindUiEvents();
-    startRefreshCountdown();
 
     try {
-        setStatus('Loading quest filters…');
+        setStatus('Loading configuration…');
         const cacheBuster = `?v=${Date.now()}`;
-        const [questRes, pokedexRes] = await Promise.all([
-            fetch(`./JSON/Quest_List.json${cacheBuster}`),
-            fetch('https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json')
+        const pokedexPromise = fetch(
+            'https://pokemon-go-api.github.io/pokemon-go-api/api/pokedex.json'
+        )
+            .then(async response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (!Array.isArray(data)) {
+                    throw new Error('Unexpected Pokédex response format.');
+                }
+
+                return data;
+            })
+            .catch(err => {
+                console.warn('Pokédex data unavailable; using fallback IDs and sprites.', err);
+                return [];
+            });
+
+        const [cityRes, questRes] = await Promise.all([
+            fetch(`./JSON/cities.json${cacheBuster}`),
+            fetch(`./JSON/Quest_List.json${cacheBuster}`)
         ]);
 
-        if (!questRes.ok || !pokedexRes.ok) {
-            throw new Error('Failed to load JSON assets.');
+        if (!cityRes.ok) {
+            throw new Error(`Failed to load city configuration (HTTP ${cityRes.status}).`);
+        }
+        if (!questRes.ok) {
+            throw new Error(`Failed to load quest data (HTTP ${questRes.status}).`);
         }
 
-        const [questData, pokedexData] = await Promise.all([
-            questRes.json(),
-            pokedexRes.json()
-        ]);
+        const cityData = await cityRes.json();
+        const questData = await questRes.json();
+        const pokedexData = await pokedexPromise;
+
+        configureCities(cityData);
+        populateCityDropdown();
 
         questList = questData.categories || {};
-        
         questListCityStatus = questData.city_status || {};
         updateCityDropdownAvailability();
+        startRefreshCountdown();
 
-        pokedexMap = Object.fromEntries(pokedexData.map(pkmn => [String(pkmn.dexNr || pkmn.id), pkmn]));
+        pokedexMap = Object.fromEntries(
+            pokedexData.map(pkmn => [String(pkmn.dexNr || pkmn.id), pkmn])
+        );
 
         renderCards();
         refreshPresetSelect();

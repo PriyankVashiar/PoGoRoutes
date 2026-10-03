@@ -1,0 +1,90 @@
+{
+  "defaultCity": "nyc",
+  "cities": [
+    {
+      "cityKey": "nyc",
+      "name": "New York",
+      "url": "https://nycpokemap.com",
+      "tz": "America/New_York",
+      "resetHour": 1,
+      "resetMinute": 0,
+      "route": {
+        "hexSizeMeters": 700,
+        "bounds": {
+          "minLat": 40.4902703,
+          "maxLat": 40.9176132,
+          "minLng": -74.2561216,
+          "maxLng": -73.650657
+        }
+      }
+    },
+    {
+      "cityKey": "vc",
+      "name": "Vancouver",
+      "url": "https://vanpokemap.com",
+      "tz": "America/Vancouver",
+      "resetHour": 1,
+      "resetMinute": 0,
+      "route": {
+        "hexSizeMeters": 1000,
+        "bounds": {
+          "minLat": 49.112986578992206,
+          "maxLat": 49.314010728183234,
+          "minLng": -123.20701971073987,
+          "maxLng": -122.87392354605953
+        }
+      }
+    },
+    {
+      "cityKey": "sg",
+      "name": "Singapore",
+      "url": "https://sgpokemap.com",
+      "tz": "Asia/Singapore",
+      "resetHour": 3,
+      "resetMinute": 30,
+      "route": {
+        "hexSizeMeters": 800,
+        "bounds": {
+          "minLat": 1.236640927766203,
+          "maxLat": 1.4745776977361658,
+          "minLng": 103.65026593111105,
+          "maxLng": 104.03530627684654
+        }
+      }
+    },
+    {
+      "cityKey": "syd",
+      "name": "Sydney",
+      "url": "https://sydneypogomap.com",
+      "tz": "Australia/Sydney",
+      "resetHour": 3,
+      "resetMinute": 30,
+      "route": {
+        "hexSizeMeters": 700,
+        "bounds": {
+          "minLat": -34.002121,
+          "maxLat": -33.7599584,
+          "minLng": 150.9580065,
+          "maxLng": 151.3058271
+        }
+      }
+    },
+    {
+      "cityKey": "uk",
+      "name": "London",
+      "url": "https://londonpogomap.com",
+      "tz": "Europe/London",
+      "resetHour": 1,
+      "resetMinute": 0,
+      "route": {
+        "hexSizeMeters": 600,
+        "bounds": {
+          "minLat": 51.4599168,
+          "maxLat": 51.5739191,
+          "minLng": -0.2330444,
+          "maxLng": 0.0171043
+        }
+      }
+    }
+  ]
+}

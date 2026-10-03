@@ -16,13 +16,10 @@ const AXIAL_DIRECTIONS = [
 // Projection & Geofencing
 // ============================================================
 
-function projectPoint(pt) {
-    const latRad = pt.lat * DEG_TO_RAD;
-    return {
-        ...pt,
-        x: pt.lng * METERS_PER_LNG * Math.cos(latRad),
-        y: pt.lat * METERS_PER_LAT
-    };
+function projectPoint(pt, grid) {
+    const refLatRad = grid.refLat * DEG_TO_RAD;
+    const { x, y } = hexProject(pt.lat, pt.lng, grid.origin, refLatRad);
+    return { ...pt, x, y };
 }
 
 function filterPoints(points, grid) {
@@ -34,50 +31,26 @@ function filterPoints(points, grid) {
 }
 
 // ============================================================
-// City Configurations & Hex Grid
+// City Route Configuration & Hex Grid
 // ============================================================
 
-const CITY_CONFIGS = {
-    nyc: {
-        hexSizeMeters: 700,
-        minLat: 40.4902703, maxLat: 40.9176132,
-        minLng: -74.2561216, maxLng: -73.650657
-    },
-    uk: {
-        hexSizeMeters: 600,
-        minLat: 51.4599168, maxLat: 51.5739191,
-        minLng: -0.2330444, maxLng: 0.0171043
-    },
-    sg: {
-        hexSizeMeters: 800,
-        minLat: 1.236640927766203, maxLat: 1.4745776977361658,
-        minLng: 103.65026593111105, maxLng: 104.03530627684654
-    },
-    syd: {
-        hexSizeMeters: 700,
-        minLat: -34.002121, maxLat: -33.7599584,
-        minLng: 150.9580065, maxLng: 151.3058271
-    },
-    vc: {
-        hexSizeMeters: 1000,
-        minLat: 49.112986578992206, maxLat: 49.314010728183234,
-        minLng: -123.20701971073987, maxLng: -122.87392354605953
-    }
-};
+function getHexGrid(cityKey, config) {
+    const bounds = config?.bounds;
+    const requiredNumbers = [
+        config?.hexSizeMeters,
+        bounds?.minLat, bounds?.maxLat,
+        bounds?.minLng, bounds?.maxLng
+    ];
 
-function getHexGrid(cityKey) {
-    const config = CITY_CONFIGS[cityKey];
-    if (!config) {
-        throw new Error(`No hex grid config for "${cityKey}". Available: ${Object.keys(CITY_CONFIGS).join(", ")}`);
+    if (!config || !bounds || requiredNumbers.some(value => !Number.isFinite(value))) {
+        throw new Error(`Invalid or missing route config for "${cityKey}".`);
     }
+
     return {
         hexSizeMeters: config.hexSizeMeters,
-        origin: { lat: config.minLat, lng: config.minLng },
-        refLat: (config.minLat + config.maxLat) / 2,
-        bounds: {
-            minLat: config.minLat, maxLat: config.maxLat,
-            minLng: config.minLng, maxLng: config.maxLng
-        }
+        origin: { lat: bounds.minLat, lng: bounds.minLng },
+        refLat: (bounds.minLat + bounds.maxLat) / 2,
+        bounds: { ...bounds }
     };
 }
 
@@ -319,12 +292,14 @@ function hexClusterBinarySearch(rawPoints, baseGrid) {
 //     of stops extending from the core) that KNN misses because
 //     each arm point has close neighbors along the arm itself.
 
-function pruneOutliers(points, preserveFirst = false) {
+function pruneOutliers(points, grid, preserveFirst = false) {
     const MIN_POINTS = 10;
-    if (points.length <= MIN_POINTS) return points;
 
-    // Project once — projectPoint spreads ...pt so x/y are added alongside lat/lng/name
-    const proj = points.map(p => p.x !== undefined ? p : projectPoint(p));
+    // Project every point into the same local coordinate system. Using a fixed
+    // reference latitude and origin avoids distorting distances by applying a
+    // different longitude scale to each point.
+    const proj = points.map(p => projectPoint(p, grid));
+    if (proj.length <= MIN_POINTS) return proj;
     const n = proj.length;
     const K = Math.min(7, n - 1);
 
@@ -516,9 +491,9 @@ function dbscan(projectedPoints, eps, minPts) {
     return { labels, numClusters: clusterId };
 }
 
-function runDBSCANClustering(rawPoints, hexSizeMeters) {
-    const projected = rawPoints.map(projectPoint);
-    const eps = hexSizeMeters;
+function runDBSCANClustering(rawPoints, grid) {
+    const projected = rawPoints.map(p => projectPoint(p, grid));
+    const eps = grid.hexSizeMeters;
     const minPts = 3; // need ≥3 other points within eps to be a core point
 
     const { labels, numClusters } = dbscan(projected, eps, minPts);
@@ -994,14 +969,15 @@ function solveTSP(points, options = {}) {
 
 self.onmessage = function (e) {
     const rawPointsIn = e.data.points || e.data || [];
-    const cityKey = e.data.city || "nyc";
+    const cityKey = e.data.city || "unknown";
+    const cityConfig = e.data.cityConfig;
     const timeLimitMs = e.data.timeLimitMs || 8000;
     const isCustom = e.data.isCustom || false;
 
     // --- Geofence & Setup ---
     let baseGrid;
     try {
-        baseGrid = getHexGrid(cityKey);
+        baseGrid = getHexGrid(cityKey, cityConfig);
     } catch (err) {
         self.postMessage({ error: err.message });
         return;
@@ -1042,7 +1018,7 @@ self.onmessage = function (e) {
             clusteredPoints = hexResult.points;
             candidateStartIndices = hexResult.startIndices;
         } else {
-            const dbscanResult = runDBSCANClustering(questPoints, baseGrid.hexSizeMeters);
+            const dbscanResult = runDBSCANClustering(questPoints, baseGrid);
             const dbCount = dbscanResult.points.length;
             const dbInRange = dbCount >= 70 && dbCount <= 250;
 
@@ -1070,8 +1046,8 @@ self.onmessage = function (e) {
     }
 
     // --- Pre-TSP: Spatial outlier pruning ---
-    // Returns projected points (x/y already attached via projectPoint spread)
-    targetPoints = pruneOutliers(targetPoints, isCustom);
+    // Returns points projected with the city's fixed origin/reference latitude.
+    targetPoints = pruneOutliers(targetPoints, baseGrid, isCustom);
 
     // Re-map candidate start indices after pruning
     // Use simple bounds check since pruning only removes elements

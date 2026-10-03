@@ -47,11 +47,13 @@ PoGoMaps-TaskList/
 │   └── icons/                     # Small set of item icons (local)
 ├── JSON/
 │   ├── archive/                   # Dated quest snapshots (scraper retention)
+│   ├── cities.json                # Shared city metadata, reset times, and route bounds
 │   ├── Quest_List.json
 │   └── <city>_quests.json
 ├── index.html
 ├── script.js
 ├── worker.js                      # High-performance matrix & local search solver
+├── tests/                         # Node + Python regression tests
 ├── map_scraper.py
 └── requirements.txt
 ```
@@ -90,8 +92,11 @@ Item icons are served locally under `assets/icons/`.
 
 ## 🧠 Code Logic & Architecture
 
+### `JSON/cities.json` (Shared City Configuration)
+The single source of truth for supported cities. It defines each city key, display name, map endpoint, IANA timezone, reset window, hex-grid size, and route geofence bounds. The frontend loads it to build the city selector, `script.js` passes the selected route configuration to `worker.js`, and `map_scraper.py` loads the same file for scraper endpoints.
+
 ### `map_scraper.py` (Data Ingestion)
-A Python script that fetches live JSON data from external Pokémon GO map providers. It processes the raw payloads, normalizes quest conditions and rewards (items, stardust, encounters), and writes clean snapshot files (`JSON/<city>_quests.json`). It also maintains a master `Quest_List.json` that the frontend uses to dynamically generate filter checkboxes and track which cities are currently missing quests (`city_status`).
+A Python script that fetches live JSON data from external Pokémon GO map providers. It processes the raw payloads, normalizes quest conditions and rewards (items, stardust, encounters), and writes clean snapshot files (`JSON/<city>_quests.json`). It loads supported map endpoints from `JSON/cities.json` and maintains a master `Quest_List.json` that the frontend uses to dynamically generate filter checkboxes and track which cities are currently missing quests (`city_status`).
 
 ### `index.html` & `style.css` (User Interface)
 A lightweight, responsive frontend that presents the available cities and dynamically loads available filters. It supports saving/loading presets to `localStorage` and includes interactive elements like custom start coordinates and real-time generation status.
@@ -108,7 +113,7 @@ The main frontend controller. It:
 ### `worker.js` (The Routing Engine)
 This Web Worker contains the heavy algorithmic logic, running on a separate thread to prevent UI freezing. Its pipeline is:
 1. **Custom Start Handling**: If a custom start coordinate is provided, it is detached from the dataset to protect it from being dropped.
-2. **Filtering**: Discards quest points outside hardcoded city bounding boxes to remove distant noise.
+2. **Filtering**: Discards quest points outside the selected city's configured bounding box to remove distant noise.
 3. **Clustering**: Groups quest points into density clusters. It first tries **Hex Binning** (mapping points to a flat axial coordinate grid and extracting the largest connected component). It uses binary search to find a hex size that yields a target number of stops (70–250). If hex binning fails to find a good range, it falls back to **DBSCAN**.
 4. **Spatial Pruning (`pruneOutliers`)**: Re-attaches the custom start point (locked at index 0) and removes clustered points that are far from the main group (using K-Nearest Neighbors IQR and centroid distance), strictly preserving the start point.
 5. **Distance Matrix**: Calculates an $O(N^2)$ Euclidean distance matrix and builds K-nearest neighbor lists.
@@ -150,6 +155,21 @@ python map_scraper.py all
 ```
 
 Dated copies are stored under `JSON/archive/YYYY-MM-DD/` (7-day retention).
+
+### 3. Running Regression Tests
+
+The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, GPX XML generation, GPS Joystick direct-import encoding, and safe quest-condition refresh behavior.
+
+```bash
+./tests/run-tests.sh
+```
+
+You can also run each side independently:
+
+```bash
+node --test tests/test_worker.js tests/test_script.js
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
 
 ---
 
