@@ -1085,7 +1085,10 @@
     }
   },
   "city_status": {
-    "https://sydneypogomap.com": true,
+    "https://sydneypogomap.com": {
+      "state": "empty",
+      "updated_at": "2026-10-03T13:59:24Z"
+    },
     "https://sgpokemap.com": true,
     "https://londonpogomap.com": true,
     "https://nycpokemap.com": true,
