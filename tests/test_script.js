@@ -66,10 +66,12 @@ test('GPX builder emits well-formed XML and escapes route names', () => {
     const city = { name: 'New & York', cityKey: 'nyc' };
     const built = context.buildGpxRoute(route, city, '2026-10-03');
 
-    assert.equal(built.filename, '2026-10-03_nyc_route.gpx');
-    assert.match(built.gpx, /New &amp; York Quest Route/);
-    assert.match(built.gpx, /A &amp; B &lt;Stop&gt;/);
-    assert.match(built.gpx, /Quote &quot; Stop/);
+    assert.equal(built.filename, '2026-10-03-nyc.gpx');
+    assert.match(built.gpx, /<name>2026-10-03-nyc<\/name>/);
+    assert.match(built.gpx, /<name>A &amp; B &lt;Stop&gt;<\/name>/);
+    assert.match(built.gpx, /<name>Quote &quot; Stop<\/name>/);
+    assert.doesNotMatch(built.gpx, /<name>1\. /);
+    assert.doesNotMatch(built.gpx, /<name>2\. /);
     assert.equal((built.gpx.match(/<rtept\b/g) || []).length, 2);
     assert.match(built.gpx, /xmlns="http:\/\/www\.topografix\.com\/GPX\/1\/1"/);
 

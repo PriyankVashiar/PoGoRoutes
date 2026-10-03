@@ -662,18 +662,18 @@ function getCustomStartLocation() {
 }
 
 function buildGpxRoute(optimizedRoute, city, todayStr) {
+    const routeName = `${todayStr}-${city.cityKey}`;
     const gpxParts = [
         '<?xml version="1.0" encoding="UTF-8"?>\n',
         '<gpx version="1.1" creator="Priyank Vashiar" xmlns="http://www.topografix.com/GPX/1/1">\n',
         '  <rte>\n',
-        `    <name>${escapeXml(city.name)} Quest Route ${todayStr}</name>\n`
+        `    <name>${escapeXml(routeName)}</name>\n`
     ];
 
-    for (let i = 0; i < optimizedRoute.length; i++) {
-        const pt = optimizedRoute[i];
+    for (const pt of optimizedRoute) {
         gpxParts.push(
             `    <rtept lat="${pt.lat}" lon="${pt.lng}">\n`,
-            `      <name>${i + 1}. ${escapeXml(pt.name)}</name>\n`,
+            `      <name>${escapeXml(pt.name)}</name>\n`,
             '    </rtept>\n'
         );
     }
@@ -681,7 +681,7 @@ function buildGpxRoute(optimizedRoute, city, todayStr) {
     gpxParts.push('  </rte>\n</gpx>');
 
     return {
-        filename: `${todayStr}_${city.cityKey}_route.gpx`,
+        filename: `${routeName}.gpx`,
         gpx: gpxParts.join('')
     };
 }
