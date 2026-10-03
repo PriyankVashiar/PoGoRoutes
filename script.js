@@ -5,6 +5,9 @@ let pokedexMap = {};
 let timerInterval = null;
 
 const DONATE_URL = 'https://buymeacoffee.com/priyankvashiar';
+const GPS_JOYSTICK_PACKAGE = 'com.priyank.gpsjoystick';
+const GPS_JOYSTICK_SCHEME = 'gpsjoystick';
+const GPS_JOYSTICK_IMPORT_VERSION = '1';
 
 const POKEMON_ARTWORK_CDN =
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
@@ -596,7 +599,96 @@ function getCustomStartLocation() {
     return { lat, lng };
 }
 
-async function handleRouteGeneration() {
+function buildGpxRoute(optimizedRoute, city, todayStr) {
+    const gpxParts = [
+        '<?xml version="1.0" encoding="UTF-8"?>\n',
+        '<gpx version="1.1" creator="Priyank Vashiar">\n',
+        '  <rte>\n',
+        `    <name>${escapeXml(city.name)} Quest Route ${todayStr}</name>\n`
+    ];
+
+    for (let i = 0; i < optimizedRoute.length; i++) {
+        const pt = optimizedRoute[i];
+        gpxParts.push(
+            `    <rtept lat="${pt.lat}" lon="${pt.lng}">\n`,
+            `      <name>${i + 1}. ${escapeXml(pt.name)}</name>\n`,
+            '    </rtept>\n'
+        );
+    }
+
+    gpxParts.push('  </rte>\n</gpx>');
+
+    return {
+        filename: `${todayStr}_${city.cityKey}_route.gpx`,
+        gpx: gpxParts.join('')
+    };
+}
+
+function bytesToBase64Url(bytes) {
+    const chunkSize = 0x8000;
+    let binary = '';
+    for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+        binary += String.fromCharCode(...bytes.subarray(offset, offset + chunkSize));
+    }
+    return btoa(binary)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=+$/g, '');
+}
+
+async function encodeGpsJoystickPayload(gpx) {
+    const sourceBytes = new TextEncoder().encode(gpx);
+
+    if (typeof CompressionStream === 'function') {
+        const compressedStream = new Blob([sourceBytes])
+            .stream()
+            .pipeThrough(new CompressionStream('gzip'));
+        const compressedBytes = new Uint8Array(await new Response(compressedStream).arrayBuffer());
+        return {
+            encoding: 'gzip-base64url',
+            data: bytesToBase64Url(compressedBytes)
+        };
+    }
+
+    return {
+        encoding: 'base64url',
+        data: bytesToBase64Url(sourceBytes)
+    };
+}
+
+async function openRouteInGpsJoystick(gpx, filename) {
+    if (!/Android/i.test(navigator.userAgent)) {
+        throw new Error('Direct GPS Joystick import is available from an Android browser.');
+    }
+
+    const payload = await encodeGpsJoystickPayload(gpx);
+    const query = new URLSearchParams({
+        v: GPS_JOYSTICK_IMPORT_VERSION,
+        encoding: payload.encoding,
+        filename,
+        group: 'Daily Quests',
+        data: payload.data
+    }).toString();
+
+    // Chrome/Android intent URLs target the GPS Joystick package directly. The
+    // app receives the equivalent gpsjoystick://import-route?... data URI.
+    const intentUrl =
+        `intent://import-route?${query}` +
+        `#Intent;scheme=${GPS_JOYSTICK_SCHEME};package=${GPS_JOYSTICK_PACKAGE};end`;
+
+    window.location.href = intentUrl;
+}
+
+function downloadGpx(gpx, filename) {
+    const blob = new Blob([gpx], { type: 'application/gpx+xml' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(link.href);
+}
+
+async function handleRouteGeneration(outputMode = 'download') {
     const checkedBoxes = document.querySelectorAll('.custom-multiselect input[type="checkbox"]:checked');
     if (checkedBoxes.length === 0) {
         setStatus('Check at least one condition filter.', 'error');
@@ -608,22 +700,38 @@ async function handleRouteGeneration() {
 
     const isCustom = !!customStartPoint;
     const activeFilters = new Set(getCheckedFilterKeys());
-
     const city = getSelectedCityConfig();
-    const btnTarget = document.getElementById('generateRouteBtn');
+    const generateBtn = document.getElementById('generateRouteBtn');
+    const importBtn = document.getElementById('importRouteBtn');
+    const importIcon = importBtn?.querySelector('.material-symbols-outlined');
+    const isDirectImport = outputMode === 'import';
 
     const setBusy = (label) => {
-        if (btnTarget) {
-            btnTarget.textContent = label;
-            btnTarget.disabled = true;
+        if (generateBtn) generateBtn.disabled = true;
+        if (importBtn) importBtn.disabled = true;
+
+        if (isDirectImport) {
+            importBtn?.classList.add('is-busy');
+            importBtn?.setAttribute('aria-busy', 'true');
+            importBtn?.setAttribute('title', label);
+            if (importIcon) importIcon.textContent = 'progress_activity';
+        } else if (generateBtn) {
+            generateBtn.textContent = label;
         }
     };
 
-    const resetButton = () => {
-        if (btnTarget) {
-            btnTarget.textContent = 'Generate Route';
-            btnTarget.disabled = false;
+    const resetButtons = () => {
+        if (generateBtn) {
+            generateBtn.textContent = 'Generate Route';
+            generateBtn.disabled = false;
         }
+        if (importBtn) {
+            importBtn.disabled = false;
+            importBtn.classList.remove('is-busy');
+            importBtn.removeAttribute('aria-busy');
+            importBtn.setAttribute('title', 'Generate and import route into GPS Joystick');
+        }
+        if (importIcon) importIcon.textContent = 'move_location';
     };
 
     let worker = null;
@@ -710,53 +818,42 @@ async function handleRouteGeneration() {
             return;
         }
 
-        setStatus(
-            `Optimized route: ${optimizedRoute.length} stop${optimizedRoute.length === 1 ? '' : 's'} — downloading GPX…`,
-            'ok'
-        );
+        const routeFile = buildGpxRoute(optimizedRoute, city, todayStr);
 
-        const gpxParts = [
-            '<?xml version="1.0" encoding="UTF-8"?>\n',
-            '<gpx version="1.1" creator="Priyank Vashiar">\n',
-            '  <rte>\n',
-            `    <name>${city.name} Quest Route ${todayStr}</name>\n`
-        ];
-
-        for (let i = 0; i < optimizedRoute.length; i++) {
-            const pt = optimizedRoute[i];
-            gpxParts.push(
-                `    <rtept lat="${pt.lat}" lon="${pt.lng}">\n`,
-                `      <name>${i + 1}. ${escapeXml(pt.name)}</name>\n`,
-                `    </rtept>\n`
+        if (isDirectImport) {
+            setBusy('Opening GPS Joystick...');
+            setStatus(
+                `Optimized route: ${optimizedRoute.length} stop${optimizedRoute.length === 1 ? '' : 's'} — opening GPS Joystick…`,
+                'ok',
+                'GPS Joystick will import the generated GPX directly.'
+            );
+            await openRouteInGpsJoystick(routeFile.gpx, routeFile.filename);
+        } else {
+            setStatus(
+                `Optimized route: ${optimizedRoute.length} stop${optimizedRoute.length === 1 ? '' : 's'} — downloading GPX…`,
+                'ok'
+            );
+            downloadGpx(routeFile.gpx, routeFile.filename);
+            setStatus(
+                `Downloaded ${routeFile.filename} (${optimizedRoute.length} stops).`,
+                'ok'
             );
         }
-
-        gpxParts.push('  </rte>\n</gpx>');
-
-        const blob = new Blob([gpxParts.join('')], { type: 'application/gpx+xml' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `${todayStr}_${city.cityKey}_route.gpx`;
-        link.click();
-        URL.revokeObjectURL(link.href);
-
-        setStatus(
-            `Downloaded ${todayStr}_${city.cityKey}_route.gpx (${optimizedRoute.length} stops).`,
-            'ok'
-        );
     } catch (err) {
-        setStatus(`Error generating GPX: ${err.message}`, 'error');
+        const action = isDirectImport ? 'importing route' : 'generating GPX';
+        setStatus(`Error ${action}: ${err.message}`, 'error');
     } finally {
         if (worker) {
             try { worker.terminate(); } catch (_) { /* ignore */ }
         }
-        resetButton();
+        resetButtons();
     }
 }
 
 function bindUiEvents() {
     document.getElementById('city-select')?.addEventListener('change', onCityChange);
-    document.getElementById('generateRouteBtn')?.addEventListener('click', handleRouteGeneration);
+    document.getElementById('generateRouteBtn')?.addEventListener('click', () => handleRouteGeneration('download'));
+    document.getElementById('importRouteBtn')?.addEventListener('click', () => handleRouteGeneration('import'));
     document.getElementById('donateBtn')?.addEventListener('click', handleDonate);
 
     document.getElementById('preset-load-btn')?.addEventListener('click', handlePresetLoad);

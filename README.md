@@ -32,6 +32,7 @@ An automated web application and background scraper that extracts daily Pokémon
 
 * 📱 **GPS Joystick Compatible**
   * Downloads standardized `.gpx` files containing `<rte>` and `<rtept>` tags, structured for direct import into GPS spoofing and routing software.
+  * The `move_location` icon runs the same route generation pipeline and hands the generated GPX directly to GPS Joystick on Android using a versioned `gpsjoystick://import-route` deep-link payload. The payload is gzip-compressed when the browser supports `CompressionStream`, with a base64url fallback. Direct imports are tagged for the `Daily Quests` group in GPS Joystick.
 
 ---
 
@@ -83,7 +84,7 @@ Item icons are served locally under `assets/icons/`.
    * Constructs a symmetric $N \times N$ `Float64Array` distance matrix and pre-computes $K$-nearest spatial neighbor lists.
    * Solves the Traveling Salesperson Problem (TSP) within a strict time limit using Multi-Start Nearest Neighbor, Greedy Tour construction, and Iterated Local Search (ILS) with 2-Opt (using neighbor lists), Or-Opt (1–5 node segments), and Double-Bridge perturbations.
    * Post-prunes the final route to eliminate any remaining stops with disproportionately high inclusion costs.
-4. **Export**: Formats the final sequence into an XML `.gpx` route file and triggers browser download.
+4. **Export / Import**: Formats the final sequence into an XML `.gpx` route file. **Generate Route** downloads the GPX normally; the `move_location` icon sends the same GPX directly to GPS Joystick on Android.
 
 ---
 

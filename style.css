@@ -78,7 +78,8 @@ body {
 .city-dropdown,
 .control-input,
 .btn-primary,
-.btn-secondary {
+.btn-secondary,
+.btn-icon {
     height: 40px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -98,7 +99,8 @@ body {
 }
 
 .btn-primary,
-.btn-secondary {
+.btn-secondary,
+.btn-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +110,8 @@ body {
 }
 
 .btn-primary:hover,
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-icon:hover {
     transform: translateY(-1px);
 }
 
@@ -158,6 +161,41 @@ body {
 .btn-secondary:hover {
     border-color: #fbbf24;
     background-color: rgba(251, 191, 36, 0.08);
+}
+
+.btn-icon {
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+    background-color: #161b22;
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-icon:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(56, 189, 248, 0.08);
+}
+
+.btn-icon:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-icon .material-symbols-outlined {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.btn-icon.is-busy .material-symbols-outlined {
+    animation: route-import-spin 0.9s linear infinite;
+}
+
+@keyframes route-import-spin {
+    to { transform: rotate(360deg); }
 }
 
 .status-bar {
