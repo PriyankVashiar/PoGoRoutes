@@ -20,8 +20,14 @@ const ITEM_DETAILS = {
     "706": { name: "Golden Razz Berry", file: "Golden_Razz_Berry.png" },
     "708": { name: "Silver Pinap Berry", file: "Silver_Pinap_Berry.png" },
     "709": { name: "Poffin", file: "Poffin.png" },
+    "1151": { name: "Sweet Apple", file: "Sweet_Apple.png" },
+    "1152": { name: "Tart Apple", file: "Tart_Apple.png" },
+    "1155": { name: "Syrupy Apple", file: "Syrupy_Apple.png" },
+    "1201": { name: "Fast TM", file: "Fast_TM.png" },
+    "1202": { name: "Charged TM", file: "Charged_TM.png" },
     "1301": { name: "Rare Candy", file: "Rare_Candy.png" },
-    "1302": { name: "Rare Candy XL", file: "Rare_Candy_XL.png" }
+    "1302": { name: "Rare Candy XL", file: "Rare_Candy_XL.png" },
+    "1501": { name: "Mysterious Component", file: "Mysterious_Component.png" }
 };
 
 const escapeXml = (str) => String(str || '')
