@@ -44,13 +44,30 @@ class QuestListRefreshTests(unittest.TestCase):
         }
         self.filters = {"t2": {"1": {}}}
 
-    def run_main(self, scrape_side_effect):
+    def run_main(self, scrape_side_effect, target="all"):
         writes = []
 
         def capture_write(path, data):
             writes.append((path, copy.deepcopy(data)))
+            pathlib.Path(path).write_text(json.dumps(data), encoding="utf-8")
+
+        def save_scrape(city_key, _working):
+            city_list = {"categories": {"2": {}}}
+            result = scrape_side_effect(city_key, city_list)
+            quests = [
+                {"rewards_types": cat, "rewards_ids": reward,
+                 "rewards_amounts": amount, "conditions_string": condition}
+                for cat, rewards in city_list["categories"].items()
+                for reward, amounts in rewards.items()
+                for amount, conditions in amounts.items()
+                for condition in conditions
+            ]
+            capture_write(pathlib.Path(map_scraper.JSON_DIR) / f"{city_key}_quests.json", {"quests": quests})
+            return result
 
         with (
+            tempfile.TemporaryDirectory() as temp_dir,
+            mock.patch.object(map_scraper, "JSON_DIR", temp_dir),
             mock.patch.object(map_scraper, "ensure_json_dir"),
             mock.patch.object(
                 map_scraper,
@@ -62,12 +79,17 @@ class QuestListRefreshTests(unittest.TestCase):
                 "fetch_city_filters",
                 side_effect=lambda _key: copy.deepcopy(self.filters),
             ),
-            mock.patch.object(map_scraper, "scrape_city", side_effect=scrape_side_effect),
+            mock.patch.object(map_scraper, "scrape_city", side_effect=save_scrape),
             mock.patch.object(map_scraper, "write_json", side_effect=capture_write),
             mock.patch.object(map_scraper, "archive_snapshot"),
             mock.patch.object(map_scraper, "prune_old_archives"),
-            mock.patch.object(sys, "argv", ["map_scraper.py", "all"]),
+            mock.patch.object(sys, "argv", ["map_scraper.py", *target.split()]),
         ):
+            for city_key in map_scraper.CITIES:
+                pathlib.Path(temp_dir, f"{city_key}_quests.json").write_text(json.dumps({
+                    "quests": [{"rewards_types": "2", "rewards_ids": "1",
+                                "rewards_amounts": "1", "conditions_string": "OLD CONDITION"}]
+                }), encoding="utf-8")
             exit_code = map_scraper.main()
 
         self.assertTrue(writes, "main() should write the final Quest_List.json")
@@ -97,7 +119,7 @@ class QuestListRefreshTests(unittest.TestCase):
         self.assertEqual(conditions, ["NEW CONDITION"])
         self.assertNotIn("OLD CONDITION", conditions)
 
-    def test_failed_all_city_refresh_preserves_last_known_good_conditions(self):
+    def test_failed_city_uses_saved_snapshot_and_successful_cities_update(self):
         call_count = 0
 
         def scrape_city(_city_key, working_quest_list):
@@ -125,8 +147,7 @@ class QuestListRefreshTests(unittest.TestCase):
 
         self.assertEqual(exit_code, 1)
         conditions = final_quest_list["categories"]["2"]["1"]["1"]
-        self.assertEqual(conditions, ["OLD CONDITION"])
-        self.assertNotIn("NEW CONDITION", conditions)
+        self.assertEqual(set(conditions), {"OLD CONDITION", "NEW CONDITION"})
 
         # The second scrape in CITIES order is Vancouver. A scraper failure is
         # distinct from a successful empty result, while successful cities remain
@@ -151,6 +172,46 @@ class QuestListRefreshTests(unittest.TestCase):
                 final_quest_list["city_status"][config["url"]]["state"],
                 "empty",
             )
+
+    def test_single_city_refresh_retains_other_city_snapshot_conditions(self):
+        def scrape(city_key, master):
+            map_scraper.populate_quest_list(master, {"quests": [{
+                "rewards_types": "2", "rewards_ids": "1",
+                "rewards_amounts": "1", "conditions_string": "NEW CONDITION"
+            }]})
+            return True
+        exit_code, master = self.run_main(scrape, target="nyc")
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(set(master["categories"]["2"]["1"]["1"]), {"OLD CONDITION", "NEW CONDITION"})
+
+    def test_archive_all_removes_conditions_from_cleared_snapshots(self):
+        exit_code, master = self.run_main(lambda *_args: self.fail("Archive must not scrape"), target="archive all")
+        self.assertEqual(exit_code, 0)
+        self.assertTrue(all(not rewards for rewards in master["categories"].values()))
+
+    def test_snapshot_rebuild_removes_stale_conditions_and_keeps_other_rewards(self):
+        with tempfile.TemporaryDirectory() as temp_dir, mock.patch.object(map_scraper, "JSON_DIR", temp_dir):
+            for city_key in map_scraper.CITIES:
+                quests = [] if city_key != "nyc" else [{
+                    "rewards_types": "2", "rewards_ids": "1301",
+                    "rewards_amounts": "1", "conditions_string": "Catch 25 Pokémon"
+                }]
+                pathlib.Path(temp_dir, f"{city_key}_quests.json").write_text(json.dumps({"quests": quests}))
+            master = copy.deepcopy(self.old_quest_list)
+            self.assertTrue(map_scraper.rebuild_quest_list_from_snapshots(master))
+            self.assertEqual(master["categories"]["2"], {"1301": {"1": ["Catch 25 Pokémon"]}})
+            pathlib.Path(temp_dir, "nyc_quests.json").write_text('{"quests": []}')
+            self.assertTrue(map_scraper.rebuild_quest_list_from_snapshots(master))
+            self.assertEqual(master["categories"]["2"], {})
+
+    def test_missing_or_invalid_snapshot_preserves_master(self):
+        with tempfile.TemporaryDirectory() as temp_dir, mock.patch.object(map_scraper, "JSON_DIR", temp_dir):
+            master = copy.deepcopy(self.old_quest_list)
+            self.assertFalse(map_scraper.rebuild_quest_list_from_snapshots(master))
+            self.assertEqual(master, self.old_quest_list)
+            pathlib.Path(temp_dir, "nyc_quests.json").write_text('{"quests": null}')
+            self.assertFalse(map_scraper.rebuild_quest_list_from_snapshots(master))
+            self.assertEqual(master, self.old_quest_list)
 
 
 class ScraperDurabilityTests(unittest.TestCase):

@@ -358,6 +358,31 @@ def populate_quest_list(quest_list: dict, current_quests_data: dict) -> None:
                 reward_dict[amount].append(condition)
 
 
+def rebuild_quest_list_from_snapshots(quest_list: dict) -> bool:
+    """Replace conditions with the union of saved city quests, including failed cities.
+
+    Missing or invalid snapshots prevent replacement: without them we cannot
+    safely determine which conditions are obsolete.
+    """
+    candidate = {"categories": {key.replace("t", ""): {} for key in CATEGORIES_TO_KEEP}}
+    for city_key in CITIES:
+        path = os.path.join(JSON_DIR, f"{city_key}_quests.json")
+        try:
+            with open(path, "r", encoding="utf-8") as file_obj:
+                snapshot = json.load(file_obj)
+            if not isinstance(snapshot, dict) or not isinstance(snapshot.get("quests"), list):
+                raise ValueError("Snapshot must contain a quests list")
+            if any(not isinstance(quest, dict) for quest in snapshot["quests"]):
+                raise ValueError("Snapshot contains an invalid quest")
+            populate_quest_list(candidate, snapshot)
+        except (OSError, ValueError) as exc:
+            log.warning("Cannot rebuild conditions from %s; preserving master conditions: %s", path, exc)
+            return False
+    quest_list["categories"] = candidate["categories"]
+    log.info("Rebuilt master quest conditions from saved city snapshots")
+    return True
+
+
 def scrape_city(city_key: str, quest_list: dict) -> bool:
     if city_key not in CITIES:
         raise ValueError(f"Unknown city key: {city_key}")
@@ -410,6 +435,7 @@ def main() -> int:
             city_status[CITIES[city_key]["url"]] = make_city_status("empty")
             log.info("Cleared %s", out_filename)
             
+        rebuild_quest_list_from_snapshots(quest_list)
         quest_list["city_status"] = city_status
         quest_list_path = os.path.join(JSON_DIR, "Quest_List.json")
         write_json(quest_list_path, quest_list)
@@ -436,24 +462,11 @@ def main() -> int:
             log.error("  %s", msg)
         return 1
 
-    # Only safely prune missing items if ALL configured cities responded successfully
-    allow_pruning = (len(filter_maps) == len(CITIES))
-    if not allow_pruning:
-        log.warning("Partial filter fetch detected (%s/%s cities). Pruning missing rewards disabled to prevent data loss.", len(filter_maps), len(CITIES))
-
     merged = merge_filter_sets(filter_maps)
 
-    # A complete all-city refresh can safely rebuild the condition lists from
-    # today's scrape data. Build that candidate separately so a failed city
-    # scrape cannot replace the last known-good master list with partial data.
-    full_condition_refresh = target == "all" and allow_pruning
-    if full_condition_refresh:
-        working_quest_list = {"categories": {}}
-        update_quest_list_structure(working_quest_list, merged, allow_pruning=True)
-        log.info("Rebuilding master quest conditions from the complete all-city scrape")
-    else:
-        working_quest_list = quest_list
-        update_quest_list_structure(working_quest_list, merged, allow_pruning=allow_pruning)
+    # Filters describe what to request; saved snapshots determine UI conditions.
+    working_quest_list = {"categories": {}}
+    update_quest_list_structure(working_quest_list, merged, allow_pruning=True)
 
     city_status = quest_list.get("city_status", {})
     if not isinstance(city_status, dict):
@@ -473,14 +486,7 @@ def main() -> int:
             scrape_errors.append(f"{city_key}: {exp}")
             log.error("Scrape failed for %s: %s", city_key, exp)
 
-    if full_condition_refresh:
-        if scrape_errors:
-            log.warning(
-                "Full condition refresh was incomplete; preserving the previous master "
-                "quest conditions"
-            )
-        else:
-            quest_list["categories"] = working_quest_list.get("categories", {})
+    rebuild_quest_list_from_snapshots(quest_list)
 
     quest_list["city_status"] = city_status
     quest_list_path = os.path.join(JSON_DIR, "Quest_List.json")

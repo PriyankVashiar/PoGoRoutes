@@ -77,7 +77,7 @@ Item icons are served locally under `assets/icons/`.
 └──────────────────┘    └──────────────────┘    └──────────────────┘    └──────────────────┘
 ```
 
-1. **Scrape**: `map_scraper.py` queries live map endpoints for active Pokéstops, parses active rewards/conditions, and outputs `JSON/<city_slug>_quests.json`. It also aggregates all available tasks into a global `Quest_List.json`.
+1. **Scrape**: `map_scraper.py` queries live map endpoints for active Pokéstops, parses active rewards/conditions, and outputs `JSON/<city_slug>_quests.json`. After each scrape or archive/reset, it rebuilds `Quest_List.json` from the latest saved snapshots for all cities, removing obsolete tasks. Failed city fetches retain their previous snapshots; missing or invalid snapshots preserve the previous master conditions.
 2. **Select**: Users load the web UI, choose city locations, apply task/reward filters (or load saved presets), and optionally input custom start coordinates.
 3. **Optimize**: Upon clicking **Generate Route**, matching points pass to `worker.js`, which:
    * Projects lat/lng to 2D planar vectors (meters) for accurate Euclidean distance calculations.
@@ -158,7 +158,7 @@ Dated copies are stored under `JSON/archive/YYYY-MM-DD/` (7-day retention).
 
 ### 3. Running Regression Tests
 
-The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, post-geofence empty routes, TSP start-index rebuilding, GPX XML generation, both GPS Joystick direct-import encodings, structured city availability states, and safe quest-condition refresh behavior. The runner removes Python bytecode caches before and after execution and disables bytecode generation, keeping `tests/` clean for source packaging.
+The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, post-geofence empty routes, TSP start-index rebuilding, GPX XML generation, both GPS Joystick direct-import encodings, structured city availability states, and snapshot-based quest-condition refresh, single-city updates, failed-city fallback, and archive/reset behavior. The runner removes Python bytecode caches before and after execution and disables bytecode generation, keeping `tests/` clean for source packaging.
 
 ```bash
 ./tests/run-tests.sh
