@@ -1097,7 +1097,10 @@
       "state": "available",
       "updated_at": "2026-10-04T00:01:08Z"
     },
-    "https://nycpokemap.com": true,
+    "https://nycpokemap.com": {
+      "state": "available",
+      "updated_at": "2026-10-04T05:00:31Z"
+    },
     "https://vanpokemap.com": {
       "state": "available",
       "updated_at": "2026-10-03T08:00:36Z"
