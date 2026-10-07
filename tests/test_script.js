@@ -236,3 +236,28 @@ test('GPS Joystick gzip payload round-trips to the original GPX', async () => {
     const compressed = Buffer.from(padded, 'base64');
     assert.equal(zlib.gunzipSync(compressed).toString('utf8'), gpx);
 });
+
+test('presets discard unavailable tasks and persist valid selections after filters load', () => {
+    const context = makeContext();
+    const valid = '2,1301,1,Catch 25 Pokémon';
+    const stale = '2,1301,1,Defeat a Team GO Rocket Grunt';
+    const commaTask = '2,1,1,Win a raid, with friends';
+    let saved = JSON.stringify({ Candy: [valid, stale], Gone: [stale], Balls: [commaTask] });
+    let writes = 0;
+    context.localStorage = {
+        getItem() { return saved; },
+        setItem(_key, value) { saved = value; writes++; }
+    };
+    context.document.querySelectorAll = () => [
+        { dataset: { l1: '2', l2: '1301', l3: '1' }, value: 'Catch 25 Pokémon' },
+        { dataset: { l1: '2', l2: '1', l3: '1' }, value: 'Win a raid, with friends' }
+    ];
+    context.reconcilePresetStore();
+    assert.equal(writes, 0, 'Do not prune before current filters have loaded');
+    vm.runInContext('presetFiltersReady = true', context);
+    context.reconcilePresetStore();
+    assert.deepEqual(JSON.parse(saved), { Candy: [valid], Gone: [], Balls: [commaTask] });
+    assert.equal(writes, 1);
+    context.reconcilePresetStore();
+    assert.equal(writes, 1, 'Unchanged presets do not need another storage write');
+});

@@ -275,6 +275,7 @@ function handleDonate() {
 }
 
 const PRESET_STORAGE_KEY = 'pogo_filter_presets_v1';
+let presetFiltersReady = false;
 
 function filterKeyFromCheckbox(cb) {
     return `${cb.dataset.l1},${cb.dataset.l2},${cb.dataset.l3},${cb.value}`;
@@ -293,6 +294,26 @@ function loadPresetStore() {
 
 function savePresetStore(store) {
     localStorage.setItem(PRESET_STORAGE_KEY, JSON.stringify(store));
+}
+
+function reconcilePresetStore() {
+    const store = loadPresetStore();
+    if (!presetFiltersReady) return store;
+    const available = new Set(Array.from(
+        document.querySelectorAll('.custom-multiselect input[type="checkbox"]')
+    ).map(filterKeyFromCheckbox));
+    let changed = false;
+    for (const name of Object.keys(store)) {
+        const keys = store[name];
+        const validKeys = Array.isArray(keys)
+            ? keys.filter(key => available.has(key)) : [];
+        if (!Array.isArray(keys) || validKeys.length !== keys.length) {
+            store[name] = validKeys;
+            changed = true;
+        }
+    }
+    if (changed) savePresetStore(store);
+    return store;
 }
 
 function getCheckedFilterKeys() {
@@ -324,7 +345,7 @@ function applyFilterKeys(keys) {
 function refreshPresetSelect() {
     const select = document.getElementById('preset-select');
     if (!select) return;
-    const store = loadPresetStore();
+    const store = reconcilePresetStore();
     const names = Object.keys(store).sort((a, b) => a.localeCompare(b));
     const current = select.value;
     select.replaceChildren();
@@ -370,7 +391,7 @@ function handlePresetLoad() {
         setStatus('Choose a preset to load.', 'error');
         return;
     }
-    const store = loadPresetStore();
+    const store = reconcilePresetStore();
     const keys = store[name];
     if (!keys) {
         setStatus(`Preset “${name}” not found.`, 'error');
@@ -1015,6 +1036,7 @@ async function init() {
         );
 
         renderCards();
+        presetFiltersReady = true;
         refreshPresetSelect();
         setStatus('Ready — select filters and generate a route.', 'ok');
     } catch (err) {
