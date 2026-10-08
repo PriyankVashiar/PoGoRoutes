@@ -1036,11 +1036,11 @@
   "city_status": {
     "https://sydneypogomap.com": {
       "state": "available",
-      "updated_at": "2026-10-07T16:30:48Z"
+      "updated_at": "2026-10-08T16:30:53Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-10-07T20:30:45Z"
+      "state": "empty",
+      "updated_at": "2026-10-08T15:59:26Z"
     },
     "https://londonpogomap.com": {
       "state": "available",
