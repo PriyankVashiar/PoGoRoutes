@@ -1,0 +1,490 @@
+{
+  "quests": [
+    {
+      "name": "Belgrave Open Space",
+      "lat": 51.516406,
+      "lng": -0.042659,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 2 Nice Curveball Throws in a row",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Old Brewery Road Activity Area",
+      "lat": 51.528332,
+      "lng": -0.01593,
+      "rewards_string": "Pokémon Encounter: Galarian Slowpoke",
+      "conditions_string": "Spin 5 PokéStops or Gyms",
+      "image": "quest_pokemon_79-g",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "79-g"
+    },
+    {
+      "name": "National Cycle Network - C27 Bike Trail Sign",
+      "lat": 51.522339,
+      "lng": -0.133901,
+      "rewards_string": "10 Pidgeot Mega Energy",
+      "conditions_string": "Power up Pokémon 5 times",
+      "image": "quest_pokemon_18",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "18"
+    },
+    {
+      "name": "Ornate Wall Sculpture",
+      "lat": 51.51899,
+      "lng": -0.046009,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "Gothenburg Court Play Area",
+      "lat": 51.490164,
+      "lng": -0.039383,
+      "rewards_string": "Pokémon Encounter: Nacli",
+      "conditions_string": "Spin 5 PokéStops",
+      "image": "quest_pokemon_932",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "932"
+    },
+    {
+      "name": "Carlton Chimney",
+      "lat": 51.54057,
+      "lng": -0.02132,
+      "rewards_string": "Pokémon Encounter: Piloswine",
+      "conditions_string": "Win a raid",
+      "image": "quest_pokemon_221",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "221"
+    },
+    {
+      "name": "The Imaginarium Gallery",
+      "lat": 51.515946,
+      "lng": -0.123866,
+      "rewards_string": "Pokémon Encounter: Murkrow",
+      "conditions_string": "Catch 10 Dark-type Pokémon",
+      "image": "quest_pokemon_198",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "198"
+    },
+    {
+      "name": "Somerset Estate Plaque",
+      "lat": 51.475864,
+      "lng": -0.172865,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Spin 3 PokéStops or Gyms",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "Climbing Web",
+      "lat": 51.516349,
+      "lng": -0.042353,
+      "rewards_string": "1 Silver Pinap Berry",
+      "conditions_string": "Earn 10000 Stardust",
+      "image": "quest_item_708",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "708"
+    },
+    {
+      "name": "Stepney Green Gardens North East Entrance",
+      "lat": 51.519015,
+      "lng": -0.04642,
+      "rewards_string": "Pokémon Encounter: Wailmer",
+      "conditions_string": "Explore 2 km",
+      "image": "quest_pokemon_320",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "320"
+    },
+    {
+      "name": "Dorrington Point Play Area",
+      "lat": 51.527426,
+      "lng": -0.016118,
+      "rewards_string": "Pokémon Encounter: Eevee",
+      "conditions_string": "Send 3 Gifts and add a sticker to each",
+      "image": "quest_pokemon_133",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "133"
+    },
+    {
+      "name": "Royal Ear Hospital Memorial Stone",
+      "lat": 51.522731,
+      "lng": -0.13452,
+      "rewards_string": "Pokémon Encounter: Snorlax",
+      "conditions_string": "Win a raid",
+      "image": "quest_pokemon_143",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "143"
+    },
+    {
+      "name": "Charlie Chaplin mural",
+      "lat": 51.536361,
+      "lng": -0.08177,
+      "rewards_string": "6 Razz Berries",
+      "conditions_string": "Catch 10 Fire-type Pokémon",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "6",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "Broad Street Boxing Club",
+      "lat": 51.510247,
+      "lng": -0.056545,
+      "rewards_string": "10 Ultra Balls",
+      "conditions_string": "Catch a Ditto",
+      "image": "quest_item_3",
+      "rewards_types": "2",
+      "rewards_amounts": "10",
+      "rewards_ids": "3"
+    },
+    {
+      "name": "Bittern Sign",
+      "lat": 51.480258,
+      "lng": -0.232861,
+      "rewards_string": "Pokémon Encounter: Poliwag",
+      "conditions_string": "Catch 5 Pokémon with Weather Boost",
+      "image": "quest_pokemon_60",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "60"
+    },
+    {
+      "name": "Kings College London",
+      "lat": 51.50563,
+      "lng": -0.112122,
+      "rewards_string": "Pokémon Encounter: Makuhita",
+      "conditions_string": "Make 10 Curveball Throws",
+      "image": "quest_pokemon_296",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "296"
+    },
+    {
+      "name": "Play! Pokémon Store",
+      "lat": 51.540443,
+      "lng": -0.020964,
+      "rewards_string": "Pokémon Encounter: Dusclops",
+      "conditions_string": "Make 10 Curveball Throws",
+      "image": "quest_pokemon_356",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "356"
+    },
+    {
+      "name": "White Hart",
+      "lat": 51.516119,
+      "lng": -0.1242,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 3 Great Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Somerset Estate Map",
+      "lat": 51.47644,
+      "lng": -0.173487,
+      "rewards_string": "Pokémon Encounter: Glameow",
+      "conditions_string": "Earn 2 Candies walking with your buddy",
+      "image": "quest_pokemon_431",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "431"
+    },
+    {
+      "name": "Stepney Green Football Pitch",
+      "lat": 51.518125,
+      "lng": -0.046357,
+      "rewards_string": "Pokémon Encounter: Archen",
+      "conditions_string": "Win a three-star raid or higher",
+      "image": "quest_pokemon_566",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "566"
+    },
+    {
+      "name": "Jolles House History Board",
+      "lat": 51.528102,
+      "lng": -0.015702,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Spin 3 PokéStops or Gyms",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "St Dunstan's Churchyard NW Entrance",
+      "lat": 51.517258,
+      "lng": -0.042488,
+      "rewards_string": "Pokémon Encounter: Trapinch",
+      "conditions_string": "Take a snapshot of a wild Pokémon",
+      "image": "quest_pokemon_328",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "328"
+    },
+    {
+      "name": "Community Mural",
+      "lat": 51.510178,
+      "lng": -0.056252,
+      "rewards_string": "6 Razz Berries",
+      "conditions_string": "Catch 10 Normal-type Pokémon",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "6",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "Brickflats, on Canal Walk, Islington",
+      "lat": 51.537239,
+      "lng": -0.08171,
+      "rewards_string": "Pokémon Encounter: Wimpod",
+      "conditions_string": "Catch 7 Pokémon",
+      "image": "quest_pokemon_767",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "767"
+    },
+    {
+      "name": "Wooden Chair with a view",
+      "lat": 51.480757,
+      "lng": -0.233503,
+      "rewards_string": "3 Razz Berries",
+      "conditions_string": "Catch 5 Pokémon with Weather Boost",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "Teeth",
+      "lat": 51.540546,
+      "lng": -0.022115,
+      "rewards_string": "2 Pinap Berries",
+      "conditions_string": "Use 5 Berries to help catch Pokémon",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Stepney Green Farm Mural",
+      "lat": 51.517265,
+      "lng": -0.043053,
+      "rewards_string": "10 Swampert Mega Energy",
+      "conditions_string": "Catch 10 Water-type Pokémon",
+      "image": "quest_pokemon_260",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "260"
+    },
+    {
+      "name": "Lord Kelvin",
+      "lat": 51.497949,
+      "lng": -0.151517,
+      "rewards_string": "5 Poké Balls",
+      "conditions_string": "Catch 5 Pokémon with Weather Boost",
+      "image": "quest_item_1",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "1"
+    },
+    {
+      "name": "Ridgmount Gardens",
+      "lat": 51.522068,
+      "lng": -0.132963,
+      "rewards_string": "Pokémon Encounter: Seaking",
+      "conditions_string": "Catch 7 different species of Pokémon",
+      "image": "quest_pokemon_119",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "119"
+    },
+    {
+      "name": "IBM Building",
+      "lat": 51.506818,
+      "lng": -0.112521,
+      "rewards_string": "Pokémon Encounter: Smoliv",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_pokemon_928",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "928"
+    },
+    {
+      "name": "Vittoria Wharf Panda Mural",
+      "lat": 51.539912,
+      "lng": -0.020832,
+      "rewards_string": "5 Poké Balls",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_1",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "1"
+    },
+    {
+      "name": "Sir John Lubbock 1834 - 1913",
+      "lat": 51.497628,
+      "lng": -0.15191,
+      "rewards_string": "2 Ultra Balls",
+      "conditions_string": "Make an Excellent Throw",
+      "image": "quest_item_3",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "3"
+    },
+    {
+      "name": "Buxhall Crescent Play Area",
+      "lat": 51.546232,
+      "lng": -0.032535,
+      "rewards_string": "200 Stardust",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_stardust",
+      "rewards_types": "3",
+      "rewards_amounts": "200",
+      "rewards_ids": "0"
+    },
+    {
+      "name": "Welcome To Mabley Green - Red Path",
+      "lat": 51.546978,
+      "lng": -0.033016,
+      "rewards_string": "Pokémon Encounter: Eelektrik",
+      "conditions_string": "Evolve a Pokémon",
+      "image": "quest_pokemon_603",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "603"
+    },
+    {
+      "name": "Charles Darwin Plaque",
+      "lat": 51.523243,
+      "lng": -0.133253,
+      "rewards_string": "1000 Stardust",
+      "conditions_string": "Win a Max Battle",
+      "image": "quest_stardust",
+      "rewards_types": "3",
+      "rewards_amounts": "1000",
+      "rewards_ids": "0"
+    },
+    {
+      "name": "Prof Maurice Wilkins Plaque",
+      "lat": 51.505757,
+      "lng": -0.111915,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 3 Great Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Field Marshal Viscount Gort vc Heritage Plaque",
+      "lat": 51.498712,
+      "lng": -0.152293,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Catch 10 Fire-type Pokémon",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "Mabley Green Noticeboard - Red Path",
+      "lat": 51.547397,
+      "lng": -0.032694,
+      "rewards_string": "10 Charizard Mega Energy",
+      "conditions_string": "Catch 10 Fire-type Pokémon",
+      "image": "quest_pokemon_6",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "6"
+    },
+    {
+      "name": "A stainless large globe ornament",
+      "lat": 51.498802,
+      "lng": -0.152969,
+      "rewards_string": "Pokémon Encounter: Gabite",
+      "conditions_string": "Win a raid",
+      "image": "quest_pokemon_444",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "444"
+    },
+    {
+      "name": "Coade Stone Reliefs",
+      "lat": 51.498152,
+      "lng": -0.153192,
+      "rewards_string": "10 Manectric Mega Energy",
+      "conditions_string": "Power up Pokémon 5 times",
+      "image": "quest_pokemon_310",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "310"
+    }
+  ],
+  "meta": {
+    "time": 1791763276
+  },
+  "filters": {
+    "t3": [
+      "200",
+      "1000"
+    ],
+    "t4": [],
+    "t2": [
+      "1",
+      "2",
+      "3",
+      "701",
+      "705",
+      "708"
+    ],
+    "t7": [
+      "60",
+      "79-g",
+      "119",
+      "133",
+      "143",
+      "198",
+      "221",
+      "296",
+      "320",
+      "328",
+      "356",
+      "431",
+      "444",
+      "566",
+      "603",
+      "767",
+      "928",
+      "932"
+    ],
+    "t8": [],
+    "t9": [],
+    "t12": [
+      "6",
+      "18",
+      "260",
+      "310"
+    ]
+  }
+}
