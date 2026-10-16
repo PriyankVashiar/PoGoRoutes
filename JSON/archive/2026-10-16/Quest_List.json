@@ -1055,11 +1055,11 @@
   "city_status": {
     "https://sydneypogomap.com": {
       "state": "available",
-      "updated_at": "2026-10-15T16:31:02Z"
+      "updated_at": "2026-10-16T16:31:03Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-10-15T20:30:59Z"
+      "state": "empty",
+      "updated_at": "2026-10-16T15:59:29Z"
     },
     "https://londonpogomap.com": {
       "state": "available",
