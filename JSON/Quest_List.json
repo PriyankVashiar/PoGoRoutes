@@ -1054,8 +1054,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "available",
-      "updated_at": "2026-10-16T16:31:03Z"
+      "state": "empty",
+      "updated_at": "2026-10-17T12:59:28Z"
     },
     "https://sgpokemap.com": {
       "state": "available",
