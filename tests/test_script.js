@@ -261,3 +261,50 @@ test('presets discard unavailable tasks and persist valid selections after filte
     context.reconcilePresetStore();
     assert.equal(writes, 1, 'Unchanged presets do not need another storage write');
 });
+
+test('Mega dropdown includes every amount and preserves exact task filter keys', () => {
+    const context = makeContext();
+    const inputs = [];
+    context.document.createElement = tag => {
+        const element = {
+            dataset: {}, children: [], classList: { contains() { return false; } },
+            appendChild(child) { this.children.push(child); },
+            setAttribute() {}, addEventListener() {}
+        };
+        if (tag === 'input') inputs.push(element);
+        return element;
+    };
+    context.createCheckboxDropdown('12', '310', '10', ['Catch 10 Pokémon'], {
+        '10': ['Catch 10 Pokémon', 'Win a raid'],
+        '25': ['Power up Pokémon 5 times', 'Win a raid'],
+        '50': ['Explore 5 km']
+    });
+    assert.deepEqual(inputs.map(cb => context.filterKeyFromCheckbox(cb)), [
+        '12,310,10,Catch 10 Pokémon', '12,310,10,Win a raid',
+        '12,310,25,Power up Pokémon 5 times', '12,310,25,Win a raid',
+        '12,310,50,Explore 5 km'
+    ]);
+});
+
+test('Pokemon images fall back from preferred artwork through GO to backup without retry loops', () => {
+    const context = makeContext();
+    const img = { style: {} };
+    context.setPokemonSprite(img, '025-a', 'https://example.test/form.png');
+    assert.equal(img.src, 'https://example.test/form.png');
+    img.onerror();
+    assert.equal(img.src, context.getPokemonGoSpriteUrl('025-a'));
+    img.onerror();
+    assert.equal(img.src, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png');
+    assert.equal(img.style.display, undefined);
+    img.onerror();
+    assert.equal(img.onerror, null);
+    assert.equal(img.style.display, 'none');
+});
+
+test('Pokemon image fallback skips duplicate primary URLs', () => {
+    const context = makeContext();
+    const img = { style: {} };
+    context.setPokemonSprite(img, '310', context.getPokemonGoSpriteUrl('310'));
+    img.onerror();
+    assert.match(img.src, /official-artwork\/310\.png$/);
+});

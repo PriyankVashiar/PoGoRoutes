@@ -11,7 +11,8 @@ An automated web application and background scraper that extracts daily Pokémon
   * **Stardust**: Filter by specific stardust reward tiers.
   * **Encounters**: Filter by target Pokémon encounter rewards.
   * **Task Conditions**: Matches exact quest conditions (e.g., *"Make 3 Great Throws in a row"*).
-  * **Filter Presets**: Save and load custom filter combinations using `localStorage`.
+  * **Mega Energy**: Each Pokémon's task dropdown includes all reward amounts, retaining the correct amount for route matching and presets.
+  * **Filter Presets**: Save and load custom filter combinations using `localStorage`. Once current filters load, unavailable tasks are automatically removed from saved presets; preset names and valid selections are retained.
 
 * ⚡ **High-Performance TSP & Cluster Optimization**
   * **Explicit $O(1)$ Geofence Bounds**: Fast coordinate bounding box filtering eliminates unnecessary point-in-polygon checks.
@@ -60,9 +61,13 @@ PoGoMaps-TaskList/
 
 ### Artwork (CDN)
 
-Pokémon encounter sprites are loaded directly from the [pokemon-go-api](https://github.com/pokemon-go-api/pokemon-go-api) assets directory:
+Encounter and Mega Energy entries load Pokémon images with automatic fallback:
 
-`https://raw.githubusercontent.com/pokemon-go-api/assets/main/Pokemon/pm{id}.icon.png`
+1. The preferred image from the Pokémon metadata, including form-specific artwork when available.
+2. The existing Pokémon GO sprite CDN: `https://raw.githubusercontent.com/pokemon-go-api/assets/main/Pokemon/pm{id}.icon.png`.
+3. [PokéAPI artwork](https://github.com/PokeAPI/sprites): `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png`.
+
+Each source is tried once when the previous image fails. The PokéAPI backup uses the base Pokédex ID, so regional forms may display standard-form artwork. If every source fails, the image is hidden and the Pokémon name remains visible.
 
 Item icons are served locally under `assets/icons/`.
 
@@ -158,7 +163,7 @@ Dated copies are stored under `JSON/archive/YYYY-MM-DD/` (7-day retention).
 
 ### 3. Running Regression Tests
 
-The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, post-geofence empty routes, TSP start-index rebuilding, GPX XML generation, both GPS Joystick direct-import encodings, structured city availability states, and snapshot-based quest-condition refresh, single-city updates, failed-city fallback, and archive/reset behavior. The runner removes Python bytecode caches before and after execution and disables bytecode generation, keeping `tests/` clean for source packaging.
+The regression suite uses only Node.js built-ins and Python's standard library in addition to the project's existing Python dependencies. It covers small-route thresholds, projection accuracy, custom-start locking, duplicate/finite worker output, zero-match handling, post-geofence empty routes, TSP start-index rebuilding, GPX XML generation, both GPS Joystick direct-import encodings, structured city availability states, and snapshot-based quest-condition refresh, single-city updates, failed-city fallback, archive/reset behavior, preset cleanup, Mega Energy tasks across reward amounts, and sprite fallback ordering. The runner removes Python bytecode caches before and after execution and disables bytecode generation, keeping `tests/` clean for source packaging.
 
 ```bash
 ./tests/run-tests.sh
@@ -186,4 +191,5 @@ Automated daily scraping is powered by `.github/workflows/run_scraper.yml`.
 
 * **Map Creators**: [nycpokemap.com](https://nycpokemap.com), [sgpokemap.com](https://sgpokemap.com), [sydneypogomap.com](https://sydneypogomap.com), [vanpokemap.com](https://vanpokemap.com), and [londonpogomap.com](https://londonpogomap.com) for public map endpoints.
 * **[pokemon-go-api/pokemon-go-api](https://github.com/pokemon-go-api/pokemon-go-api)**: Pokémon GO specific Pokédex data structure, forms, and in-game sprites.
+* **[PokeAPI/sprites](https://github.com/PokeAPI/sprites)**: Backup Pokémon artwork when primary images are unavailable.
 * **[dextel2](https://github.com/dextel2)**: Contribution to this project

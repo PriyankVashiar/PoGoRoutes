@@ -68,6 +68,25 @@ function getPokemonGoSpriteUrl(pokemonId) {
     return `${POKEMON_GO_ASSETS_CDN}/pm${id}.icon.png`;
 }
 
+function setPokemonSprite(img, pokemonId, preferredUrl) {
+    const baseId = String(pokemonId || '').trim().match(/^(\d+)/)?.[1];
+    const sources = [...new Set([
+        preferredUrl,
+        getPokemonGoSpriteUrl(pokemonId),
+        baseId ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${Number(baseId)}.png` : ''
+    ].filter(Boolean))];
+    let next = 0;
+    img.onerror = () => {
+        if (next < sources.length) {
+            img.src = sources[next++];
+        } else {
+            img.onerror = null;
+            img.style.display = 'none';
+        }
+    };
+    img.onerror();
+}
+
 function configureCities(payload) {
     if (!payload || !Array.isArray(payload.cities) || payload.cities.length === 0) {
         throw new Error('City configuration must contain a non-empty cities array.');
@@ -434,7 +453,7 @@ function closeAllMultiselects(exceptContainer = null) {
     });
 }
 
-function createCheckboxDropdown(l1, l2, l3, conditions) {
+function createCheckboxDropdown(l1, l2, l3, conditions, amountGroups = null) {
     const wrapper = document.createElement('div');
     wrapper.className = 'custom-multiselect';
 
@@ -453,7 +472,11 @@ function createCheckboxDropdown(l1, l2, l3, conditions) {
     container.setAttribute('aria-multiselectable', 'true');
     container.addEventListener('click', (e) => e.stopPropagation());
 
-    const optionsToRender = (conditions && conditions.length > 0) ? conditions : ['No Conditions'];
+    const optionsToRender = amountGroups
+        ? Object.entries(amountGroups).flatMap(([amount, tasks]) =>
+            tasks.map(condition => ({ amount, condition })))
+        : ((conditions && conditions.length > 0) ? conditions : ['No Conditions'])
+            .map(condition => ({ amount: l3, condition }));
     const checkboxes = [];
 
     const updateBoxText = () => {
@@ -489,7 +512,7 @@ function createCheckboxDropdown(l1, l2, l3, conditions) {
         }
     };
 
-    optionsToRender.forEach(cond => {
+    optionsToRender.forEach(({ amount, condition: cond }) => {
         const label = document.createElement('label');
         label.className = 'checkbox-option';
         label.setAttribute('role', 'option');
@@ -499,7 +522,7 @@ function createCheckboxDropdown(l1, l2, l3, conditions) {
         cb.value = cond === 'No Conditions' ? '' : cond;
         cb.dataset.l1 = l1;
         cb.dataset.l2 = l2;
-        cb.dataset.l3 = l3;
+        cb.dataset.l3 = amount;
         cb.addEventListener('change', updateBoxText);
 
         label.appendChild(cb);
@@ -594,12 +617,11 @@ function renderCards() {
                 labelWrapper.className = 'row-label-wrapper';
 
                 const iconImg = document.createElement('img');
-                iconImg.src = targetImage || getPokemonGoSpriteUrl(baseId);
                 iconImg.alt = pokemonName;
                 iconImg.className = 'encounter-icon';
                 iconImg.loading = 'lazy';
                 iconImg.referrerPolicy = 'no-referrer';
-                iconImg.onerror = () => { iconImg.style.display = 'none'; };
+                setPokemonSprite(iconImg, baseId, targetImage);
 
                 const labelText = document.createElement('span');
                 labelText.className = 'row-label';
@@ -609,7 +631,9 @@ function renderCards() {
                 labelWrapper.appendChild(labelText);
 
                 row.appendChild(labelWrapper);
-                row.appendChild(createCheckboxDropdown(cat, pokemonId, amountKey, conditions));
+                row.appendChild(createCheckboxDropdown(
+                    cat, pokemonId, amountKey, conditions, cat === '12' ? level3Obj : null
+                ));
                 fragment.appendChild(row);
             });
         } else {
