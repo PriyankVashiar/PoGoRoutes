@@ -32,9 +32,7 @@
           "Make 3 Great Throws in a row",
           "Catch 25 Pokémon",
           "Send 3 Gifts to friends",
-          "Catch 8 Pokémon",
-          "Explore 3 km",
-          "Spin a PokéStop you haven't visited before"
+          "Catch 8 Pokémon"
         ],
         "3": [
           "Power up Pokémon 15 times",
@@ -304,9 +302,7 @@
       },
       "309": {
         "0": [
-          "Explore 2 km",
-          "Earn a Candy exploring with your buddy",
-          "Explore 1 km"
+          "Explore 2 km"
         ]
       },
       "587": {
@@ -744,8 +740,7 @@
       },
       "84": {
         "0": [
-          "Spin 3 PokéStops or Gyms",
-          "Explore 1 km"
+          "Spin 3 PokéStops or Gyms"
         ]
       },
       "136": {
@@ -979,16 +974,6 @@
         "0": [
           "Make 10 Curveball Throws"
         ]
-      },
-      "331": {
-        "0": [
-          "Explore 1 km"
-        ]
-      },
-      "946": {
-        "0": [
-          "Earn a Candy exploring with your buddy"
-        ]
       }
     },
     "12": {
@@ -1018,10 +1003,6 @@
       "310": {
         "10": [
           "Power up Pokémon 5 times"
-        ],
-        "25": [
-          "Explore 3 km",
-          "Spin a PokéStop you haven't visited before"
         ]
       },
       "6": {
@@ -1071,7 +1052,7 @@
     },
     "https://vanpokemap.com": {
       "state": "available",
-      "updated_at": "2026-10-19T08:00:44Z"
+      "updated_at": "2026-10-20T08:00:41Z"
     }
   }
 }
