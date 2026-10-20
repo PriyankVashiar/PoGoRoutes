@@ -1,6 +1,514 @@
 {
-  "quests": [],
+  "quests": [
+    {
+      "name": "The Eagle",
+      "lat": 51.505864,
+      "lng": -0.026228,
+      "rewards_string": "Pokémon Encounter: Ponyta",
+      "conditions_string": "Explore 2 km",
+      "image": "quest_pokemon_77",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "77"
+    },
+    {
+      "name": "St John's Wood Underground Station",
+      "lat": 51.534552,
+      "lng": -0.17413,
+      "rewards_string": "10 Blastoise Mega Energy",
+      "conditions_string": "Catch 10 Water-type Pokémon",
+      "image": "quest_pokemon_9",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "9"
+    },
+    {
+      "name": "New Garden Quarter Map - Penny Brookes Street",
+      "lat": 51.546188,
+      "lng": -0.002108,
+      "rewards_string": "500 Stardust",
+      "conditions_string": "Catch 10 Pokémon with Weather Boost",
+      "image": "quest_stardust",
+      "rewards_types": "3",
+      "rewards_amounts": "500",
+      "rewards_ids": "0"
+    },
+    {
+      "name": "Winchester House",
+      "lat": 51.518219,
+      "lng": -0.166999,
+      "rewards_string": "Pokémon Encounter: Stufful",
+      "conditions_string": "Catch 7 Pokémon",
+      "image": "quest_pokemon_759",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "759"
+    },
+    {
+      "name": "BBC Television Centre",
+      "lat": 51.511282,
+      "lng": -0.224887,
+      "rewards_string": "2 Ultra Balls",
+      "conditions_string": "Make an Excellent Throw",
+      "image": "quest_item_3",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "3"
+    },
+    {
+      "name": "Eagle Wharf Road Cycles",
+      "lat": 51.533401,
+      "lng": -0.093281,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Kennington Underground Station",
+      "lat": 51.488267,
+      "lng": -0.105821,
+      "rewards_string": "5 Poké Balls",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_1",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "1"
+    },
+    {
+      "name": "Victorian pillar box, Northolme Road",
+      "lat": 51.556725,
+      "lng": -0.095837,
+      "rewards_string": "1500 Stardust",
+      "conditions_string": "Catch a Dragon-type Pokémon",
+      "image": "quest_stardust",
+      "rewards_types": "3",
+      "rewards_amounts": "1500",
+      "rewards_ids": "0"
+    },
+    {
+      "name": "Old Tom & Jerry Pub Sign",
+      "lat": 51.532907,
+      "lng": 0.005948,
+      "rewards_string": "5 Poké Balls",
+      "conditions_string": "Make 3 Great Throws",
+      "image": "quest_item_1",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "1"
+    },
+    {
+      "name": "'Chimney' by Andrew Burton (2008)",
+      "lat": 51.505469,
+      "lng": -0.026345,
+      "rewards_string": "1000 Stardust",
+      "conditions_string": "Win a Max Battle",
+      "image": "quest_stardust",
+      "rewards_types": "3",
+      "rewards_amounts": "1000",
+      "rewards_ids": "0"
+    },
+    {
+      "name": "St John's Wood Map and Information Sign",
+      "lat": 51.534601,
+      "lng": -0.174109,
+      "rewards_string": "10 Blastoise Mega Energy",
+      "conditions_string": "Power up Pokémon 5 times",
+      "image": "quest_pokemon_9",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "9"
+    },
+    {
+      "name": "Playground at New Garden Quarter",
+      "lat": 51.545574,
+      "lng": -0.002171,
+      "rewards_string": "500 Stardust",
+      "conditions_string": "Spin 3 PokéStops or Gyms",
+      "image": "quest_stardust",
+      "rewards_types": "3",
+      "rewards_amounts": "500",
+      "rewards_ids": "0"
+    },
+    {
+      "name": "A Factory For Television 1960",
+      "lat": 51.51156,
+      "lng": -0.224976,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 3 Great Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Streeties",
+      "lat": 51.512955,
+      "lng": 0.012315,
+      "rewards_string": "Pokémon Encounter: Remoraid",
+      "conditions_string": "Spin 3 PokéStops or Gyms",
+      "image": "quest_pokemon_223",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "223"
+    },
+    {
+      "name": "Historic plaque - Bedford College UCL foundation",
+      "lat": 51.518806,
+      "lng": -0.128894,
+      "rewards_string": "3 Razz Berries",
+      "conditions_string": "Catch 5 Pokémon with Weather Boost",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "King Edward VII’s Royal Cypher (1901-1910)",
+      "lat": 51.47902,
+      "lng": -0.047356,
+      "rewards_string": "Pokémon Encounter: Poochyena",
+      "conditions_string": "Catch 10 Dark-type Pokémon",
+      "image": "quest_pokemon_261",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "261"
+    },
+    {
+      "name": "Penwith Manor Welcome Map",
+      "lat": 51.48822,
+      "lng": -0.107091,
+      "rewards_string": "1 Rare Candy",
+      "conditions_string": "Catch 25 Pokémon",
+      "image": "quest_item_1301",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "1301"
+    },
+    {
+      "name": "Mitre Road Memorial",
+      "lat": 51.533106,
+      "lng": 0.005799,
+      "rewards_string": "Pokémon Encounter: Noctowl",
+      "conditions_string": "Hatch an Egg",
+      "image": "quest_pokemon_164",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "164"
+    },
+    {
+      "name": "Sasso Cosmico by Do Vassilakis",
+      "lat": 51.505782,
+      "lng": -0.027094,
+      "rewards_string": "6 Razz Berries",
+      "conditions_string": "Catch 10 Water-type Pokémon",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "6",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "St. Mark's Marylebone",
+      "lat": 51.518468,
+      "lng": -0.166705,
+      "rewards_string": "2 Pinap Berries",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "St John’s Wood Station Tiles Information Sign",
+      "lat": 51.534694,
+      "lng": -0.174214,
+      "rewards_string": "10 Swampert Mega Energy",
+      "conditions_string": "Catch 10 Water-type Pokémon",
+      "image": "quest_pokemon_260",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "260"
+    },
+    {
+      "name": "Hallsville Quarter Map - Jam Lane",
+      "lat": 51.51355,
+      "lng": 0.011426,
+      "rewards_string": "Pokémon Encounter: Wailmer",
+      "conditions_string": "Explore 2 km",
+      "image": "quest_pokemon_320",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "320"
+    },
+    {
+      "name": "Marble Buddha Amitabha",
+      "lat": 51.519806,
+      "lng": -0.128651,
+      "rewards_string": "Pokémon Encounter: Anorith",
+      "conditions_string": "Hatch an Egg",
+      "image": "quest_pokemon_347",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "347"
+    },
+    {
+      "name": "Holborn Studios Tower",
+      "lat": 51.534323,
+      "lng": -0.092572,
+      "rewards_string": "Pokémon Encounter: Kabuto",
+      "conditions_string": "Make 3 Great Throws",
+      "image": "quest_pokemon_140",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "140"
+    },
+    {
+      "name": "The Spit and Sawdust",
+      "lat": 51.494815,
+      "lng": -0.088761,
+      "rewards_string": "Pokémon Encounter: Nickit",
+      "conditions_string": "Catch 10 Dark-type Pokémon",
+      "image": "quest_pokemon_827",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "827"
+    },
+    {
+      "name": "Vanishing Point by Jay Battle",
+      "lat": 51.505236,
+      "lng": -0.026801,
+      "rewards_string": "Pokémon Encounter: Litleo",
+      "conditions_string": "Earn 2 Candies walking with your buddy",
+      "image": "quest_pokemon_667",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "667"
+    },
+    {
+      "name": "The Wargrave Arms",
+      "lat": 51.51802,
+      "lng": -0.165829,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 3 Great Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Canalside Square",
+      "lat": 51.534331,
+      "lng": -0.094408,
+      "rewards_string": "Pokémon Encounter: Buneary",
+      "conditions_string": "Earn 2 Candies walking with your buddy",
+      "image": "quest_pokemon_427",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "427"
+    },
+    {
+      "name": "A Powerhouse of Creative Broadcasting 1961",
+      "lat": 51.510879,
+      "lng": -0.226135,
+      "rewards_string": "Pokémon Encounter: Cottonee",
+      "conditions_string": "Take a snapshot of a wild Pokémon",
+      "image": "quest_pokemon_546",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "546"
+    },
+    {
+      "name": "Eckington Gardens",
+      "lat": 51.477684,
+      "lng": -0.047029,
+      "rewards_string": "Pokémon Encounter: Seedot",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_pokemon_273",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "273"
+    },
+    {
+      "name": "Bragansas Plaque",
+      "lat": 51.487901,
+      "lng": -0.105215,
+      "rewards_string": "Pokémon Encounter: Marowak (Alola)",
+      "conditions_string": "Hatch an Egg",
+      "image": "quest_pokemon_105",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "105"
+    },
+    {
+      "name": "The Sphere",
+      "lat": 51.51264,
+      "lng": 0.010674,
+      "rewards_string": "Pokémon Encounter: Squirtle",
+      "conditions_string": "Power up Pokémon 3 times",
+      "image": "quest_pokemon_7",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "7"
+    },
+    {
+      "name": "C11 Bike Trail Marker (Packington Bridge)",
+      "lat": 51.534013,
+      "lng": -0.094181,
+      "rewards_string": "Pokémon Encounter: Weezing",
+      "conditions_string": "Defeat a Team GO Rocket Grunt",
+      "image": "quest_pokemon_110",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "110"
+    },
+    {
+      "name": "‘Shaun of the Dead’ Pub",
+      "lat": 51.478074,
+      "lng": -0.047633,
+      "rewards_string": "3 Razz Berries",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "Labyrinth 110/270 by Mark Wallinger at Kennington Underground Station",
+      "lat": 51.488255,
+      "lng": -0.105529,
+      "rewards_string": "Pokémon Encounter: Fidough",
+      "conditions_string": "Hatch an Egg",
+      "image": "quest_pokemon_926",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "926"
+    },
+    {
+      "name": "Entrance Paragon Gardens",
+      "lat": 51.493987,
+      "lng": -0.089951,
+      "rewards_string": "Pokémon Encounter: Stufful",
+      "conditions_string": "Hatch an Egg",
+      "image": "quest_pokemon_759",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "759"
+    },
+    {
+      "name": "Carron Company Sterlingshire",
+      "lat": 51.50619,
+      "lng": -0.026759,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Catch 10 Pokémon with Weather Boost",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "Hallsville Quarter Playground",
+      "lat": 51.513542,
+      "lng": 0.010869,
+      "rewards_string": "Pokémon Encounter: Sunkern",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_pokemon_191",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "191"
+    },
+    {
+      "name": "Wood Lane GR Postbox",
+      "lat": 51.511456,
+      "lng": -0.22451,
+      "rewards_string": "2 Golden Razz Berries",
+      "conditions_string": "Make 3 Great Curveball Throws in a row",
+      "image": "quest_item_706",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "706"
+    },
+    {
+      "name": "White City Close children's playground",
+      "lat": 51.511703,
+      "lng": -0.226082,
+      "rewards_string": "10 Blaziken Mega Energy",
+      "conditions_string": "Catch 10 Fire-type Pokémon",
+      "image": "quest_pokemon_257",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "257"
+    },
+    {
+      "name": "Sir Ernest George Plaque",
+      "lat": 51.494666,
+      "lng": -0.088981,
+      "rewards_string": "Pokémon Encounter: Golett",
+      "conditions_string": "Catch 10 Ghost-type Pokémon",
+      "image": "quest_pokemon_622",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "622"
+    },
+    {
+      "name": "Holbrooke Court Local Information Board",
+      "lat": 51.557638,
+      "lng": -0.121273,
+      "rewards_string": "5 Poké Balls",
+      "conditions_string": "Make 2 Nice Curveball Throws in a row",
+      "image": "quest_item_1",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "1"
+    }
+  ],
   "meta": {
-    "time": 1792450773
+    "time": 1792454479
+  },
+  "filters": {
+    "t3": [
+      "500",
+      "1000",
+      "1500"
+    ],
+    "t4": [],
+    "t2": [
+      "1",
+      "2",
+      "3",
+      "701",
+      "705",
+      "706",
+      "1301"
+    ],
+    "t7": [
+      "7",
+      "77",
+      "105",
+      "110",
+      "140",
+      "164",
+      "191",
+      "223",
+      "261",
+      "273",
+      "320",
+      "347",
+      "427",
+      "546",
+      "622",
+      "667",
+      "759",
+      "827",
+      "926"
+    ],
+    "t8": [],
+    "t9": [],
+    "t12": [
+      "9",
+      "257",
+      "260"
+    ]
   }
 }
