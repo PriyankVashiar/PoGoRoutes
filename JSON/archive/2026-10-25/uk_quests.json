@@ -1,0 +1,334 @@
+{
+  "quests": [
+    {
+      "name": "Lord Alexander Of Weedon",
+      "lat": 51.527913,
+      "lng": -0.220032,
+      "rewards_string": "10 Charizard Mega Energy",
+      "conditions_string": "Catch 10 Fire-type Pokémon",
+      "image": "quest_pokemon_6",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "6"
+    },
+    {
+      "name": "Dolland House Playground",
+      "lat": 51.487847,
+      "lng": -0.11594,
+      "rewards_string": "Pokémon Encounter: Mareanie",
+      "conditions_string": "Make 10 Nice Throws",
+      "image": "quest_pokemon_747",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "747"
+    },
+    {
+      "name": "King's Cross Mosque & Islamic Cultural Center",
+      "lat": 51.528057,
+      "lng": -0.121256,
+      "rewards_string": "Pokémon Encounter: Flareon",
+      "conditions_string": "Win a raid",
+      "image": "quest_pokemon_136",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "136"
+    },
+    {
+      "name": "London Academy of Excellence",
+      "lat": 51.539507,
+      "lng": -0.001295,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Catch 10 Pokémon",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Go London Public Gym",
+      "lat": 51.48813,
+      "lng": -0.117496,
+      "rewards_string": "2 Pinap Berries",
+      "conditions_string": "Use 5 Berries to help catch Pokémon",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "The Driver",
+      "lat": 51.533649,
+      "lng": -0.118817,
+      "rewards_string": "Pokémon Encounter: Smoliv",
+      "conditions_string": "Catch 7 different species of Pokémon",
+      "image": "quest_pokemon_928",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "928"
+    },
+    {
+      "name": "Roxburghe Mansion",
+      "lat": 51.500636,
+      "lng": -0.188319,
+      "rewards_string": "Pokémon Encounter: Spinda (04)",
+      "conditions_string": "Make 5 Great Curveball Throws in a row",
+      "image": "quest_pokemon_327",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "327"
+    },
+    {
+      "name": "Carpenters Footbridge Olympic Murals",
+      "lat": 51.539766,
+      "lng": -0.001818,
+      "rewards_string": "Pokémon Encounter: Makuhita",
+      "conditions_string": "Make 10 Curveball Throws",
+      "image": "quest_pokemon_296",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "296"
+    },
+    {
+      "name": "Highgate Road Post Office",
+      "lat": 51.555205,
+      "lng": -0.145293,
+      "rewards_string": "Pokémon Encounter: Togetic",
+      "conditions_string": "Send 3 Gifts and add a sticker to each",
+      "image": "quest_pokemon_176",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "176"
+    },
+    {
+      "name": "Bentworth Road Stink Pipe",
+      "lat": 51.515592,
+      "lng": -0.232807,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Catch 10 Water-type Pokémon",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "The Greyhound",
+      "lat": 51.50103,
+      "lng": -0.189649,
+      "rewards_string": "Pokémon Encounter: Duskull",
+      "conditions_string": "Catch 10 Ghost-type Pokémon",
+      "image": "quest_pokemon_355",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "355"
+    },
+    {
+      "name": "Carpenters Company Historical Site",
+      "lat": 51.538921,
+      "lng": -0.002612,
+      "rewards_string": "5 Great Balls",
+      "conditions_string": "Make an Excellent Throw",
+      "image": "quest_item_2",
+      "rewards_types": "2",
+      "rewards_amounts": "5",
+      "rewards_ids": "2"
+    },
+    {
+      "name": "Little Green Street",
+      "lat": 51.55587,
+      "lng": -0.144985,
+      "rewards_string": "2 Pinap Berries",
+      "conditions_string": "Make an Excellent Throw",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Saunders Ness",
+      "lat": 51.490678,
+      "lng": -0.003366,
+      "rewards_string": "3 Razz Berries",
+      "conditions_string": "Make 2 Nice Curveball Throws in a row",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "Now You See It",
+      "lat": 51.534947,
+      "lng": -0.118167,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Well Street Common User Group Noticeboard",
+      "lat": 51.541157,
+      "lng": -0.042756,
+      "rewards_string": "Pokémon Encounter: Dunsparce",
+      "conditions_string": "Spin 5 PokéStops",
+      "image": "quest_pokemon_206",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "206"
+    },
+    {
+      "name": "Bug Hotels",
+      "lat": 51.553063,
+      "lng": -0.167895,
+      "rewards_string": "Pokémon Encounter: Mawile",
+      "conditions_string": "Hatch 2 Eggs",
+      "image": "quest_pokemon_303",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "303"
+    },
+    {
+      "name": "Thackeray Gallery",
+      "lat": 51.500533,
+      "lng": -0.188838,
+      "rewards_string": "2 Pinap Berries",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "2",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Building Crafts College Foundation Stone",
+      "lat": 51.539566,
+      "lng": -0.002811,
+      "rewards_string": "Pokémon Encounter: Duskull",
+      "conditions_string": "Catch 10 Ghost-type Pokémon",
+      "image": "quest_pokemon_355",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "355"
+    },
+    {
+      "name": "Ingestre Play Area",
+      "lat": 51.555629,
+      "lng": -0.144084,
+      "rewards_string": "1 Pinap Berry",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_705",
+      "rewards_types": "2",
+      "rewards_amounts": "1",
+      "rewards_ids": "705"
+    },
+    {
+      "name": "Play Area - Well Street Common",
+      "lat": 51.541145,
+      "lng": -0.04192,
+      "rewards_string": "10 Blaziken Mega Energy",
+      "conditions_string": "Catch 10 Fire-type Pokémon",
+      "image": "quest_pokemon_257",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "257"
+    },
+    {
+      "name": "Hampstead Green Open Space",
+      "lat": 51.552757,
+      "lng": -0.167686,
+      "rewards_string": "3 Razz Berries",
+      "conditions_string": "Make 5 Nice Throws",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "Joan Sims",
+      "lat": 51.500389,
+      "lng": -0.1889,
+      "rewards_string": "10 Sceptile Mega Energy",
+      "conditions_string": "Catch 10 Grass-type Pokémon",
+      "image": "quest_pokemon_254",
+      "rewards_types": "12",
+      "rewards_amounts": "10",
+      "rewards_ids": "254"
+    },
+    {
+      "name": "Hampstead Rosslyn Hill Map and Information Sign",
+      "lat": 51.552276,
+      "lng": -0.167778,
+      "rewards_string": "Pokémon Encounter: Purrloin",
+      "conditions_string": "Catch 10 Dark-type Pokémon",
+      "image": "quest_pokemon_509",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "509"
+    },
+    {
+      "name": "Hubert Parry Blue Plaque",
+      "lat": 51.500189,
+      "lng": -0.189851,
+      "rewards_string": "3 Rare Candies",
+      "conditions_string": "Power up Pokémon 15 times",
+      "image": "quest_item_1301",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "1301"
+    },
+    {
+      "name": "The Wharrie Shelter Mosaic",
+      "lat": 51.552887,
+      "lng": -0.168418,
+      "rewards_string": "3 Razz Berries",
+      "conditions_string": "Catch 5 Pokémon with Weather Boost",
+      "image": "quest_item_701",
+      "rewards_types": "2",
+      "rewards_amounts": "3",
+      "rewards_ids": "701"
+    },
+    {
+      "name": "The George Pub",
+      "lat": 51.552373,
+      "lng": -0.167344,
+      "rewards_string": "Pokémon Encounter: Ponyta",
+      "conditions_string": "Explore 2 km",
+      "image": "quest_pokemon_77",
+      "rewards_types": "7",
+      "rewards_amounts": "0",
+      "rewards_ids": "77"
+    }
+  ],
+  "meta": {
+    "time": 1792886473
+  },
+  "filters": {
+    "t3": [],
+    "t4": [],
+    "t2": [
+      "2",
+      "701",
+      "705",
+      "1301"
+    ],
+    "t7": [
+      "77",
+      "136",
+      "176",
+      "206",
+      "296",
+      "303",
+      "327",
+      "355",
+      "509",
+      "747",
+      "928"
+    ],
+    "t8": [],
+    "t9": [],
+    "t12": [
+      "6",
+      "254",
+      "257"
+    ]
+  }
+}
