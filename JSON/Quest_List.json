@@ -987,16 +987,6 @@
           "Make 6 Nice Throws"
         ]
       },
-      "714": {
-        "0": [
-          "Catch 13 Ghost-type Pokémon"
-        ]
-      },
-      "200": {
-        "0": [
-          "Make 6 Nice Throws"
-        ]
-      },
       "393": {
         "0": [
           "Catch 13 Ghost-type Pokémon"
@@ -1007,9 +997,19 @@
           "Win 3 raids"
         ]
       },
+      "714": {
+        "0": [
+          "Catch 13 Ghost-type Pokémon"
+        ]
+      },
       "": {
         "0": [
           "Win a raid"
+        ]
+      },
+      "200": {
+        "0": [
+          "Make 6 Nice Throws"
         ]
       }
     },
@@ -1076,8 +1076,8 @@
       "updated_at": "2026-10-27T16:31:00Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-10-27T15:59:32Z"
+      "state": "available",
+      "updated_at": "2026-10-27T20:30:54Z"
     },
     "https://londonpogomap.com": {
       "state": "available",
