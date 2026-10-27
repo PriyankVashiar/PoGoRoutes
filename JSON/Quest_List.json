@@ -478,7 +478,8 @@
       },
       "355": {
         "0": [
-          "Catch 10 Ghost-type Pokémon"
+          "Catch 10 Ghost-type Pokémon",
+          "Make 6 Nice Throws"
         ]
       },
       "215": {
@@ -974,6 +975,42 @@
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
+      },
+      "41": {
+        "0": [
+          "Win a raid",
+          "Catch 13 Ghost-type Pokémon"
+        ]
+      },
+      "710": {
+        "0": [
+          "Make 6 Nice Throws"
+        ]
+      },
+      "714": {
+        "0": [
+          "Catch 13 Ghost-type Pokémon"
+        ]
+      },
+      "200": {
+        "0": [
+          "Make 6 Nice Throws"
+        ]
+      },
+      "393": {
+        "0": [
+          "Catch 13 Ghost-type Pokémon"
+        ]
+      },
+      "25": {
+        "0": [
+          "Win 3 raids"
+        ]
+      },
+      "": {
+        "0": [
+          "Win a raid"
+        ]
       }
     },
     "12": {
@@ -1035,8 +1072,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-10-27T12:59:28Z"
+      "state": "available",
+      "updated_at": "2026-10-27T16:31:00Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
