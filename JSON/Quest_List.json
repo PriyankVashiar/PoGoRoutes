@@ -1007,14 +1007,14 @@
           "Catch a Dragon-type Pokémon"
         ]
       },
-      "": {
-        "0": [
-          "Win a raid"
-        ]
-      },
       "610": {
         "0": [
           "Catch a Dragon-type Pokémon"
+        ]
+      },
+      "": {
+        "0": [
+          "Win a raid"
         ]
       }
     },
@@ -1093,8 +1093,8 @@
       "updated_at": "2026-10-29T05:00:43Z"
     },
     "https://vanpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-10-29T06:59:25Z"
+      "state": "available",
+      "updated_at": "2026-10-29T08:00:44Z"
     }
   }
 }
