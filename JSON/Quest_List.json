@@ -1011,11 +1011,6 @@
         "0": [
           "Catch a Dragon-type Pokémon"
         ]
-      },
-      "": {
-        "0": [
-          "Win a raid"
-        ]
       }
     },
     "12": {
@@ -1085,8 +1080,8 @@
       "updated_at": "2026-10-29T20:30:53Z"
     },
     "https://londonpogomap.com": {
-      "state": "available",
-      "updated_at": "2026-10-29T01:01:16Z"
+      "state": "empty",
+      "updated_at": "2026-10-29T23:59:30Z"
     },
     "https://nycpokemap.com": {
       "state": "available",
