@@ -37,8 +37,8 @@
         "3": [
           "Power up Pokémon 15 times",
           "Catch a Ditto",
-          "Catch a Dragon-type Pokémon",
-          "Make 3 Great Curveball Throws in a row"
+          "Make 3 Great Curveball Throws in a row",
+          "Catch a Dragon-type Pokémon"
         ]
       },
       "705": {
@@ -1009,14 +1009,14 @@
           "Make 6 Nice Throws"
         ]
       },
-      "607": {
-        "0": [
-          "Make 6 Nice Throws"
-        ]
-      },
       "656": {
         "0": [
           "Catch 13 Ghost-type Pokémon"
+        ]
+      },
+      "607": {
+        "0": [
+          "Make 6 Nice Throws"
         ]
       },
       "303": {
@@ -1024,14 +1024,14 @@
           "Hatch 2 Eggs"
         ]
       },
-      "333": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
       "610": {
         "0": [
           "Catch a Dragon-type Pokémon"
+        ]
+      },
+      "333": {
+        "0": [
+          "Make 10 Curveball Throws"
         ]
       }
     },
@@ -1103,8 +1103,8 @@
       "updated_at": "2026-11-01T16:30:52Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-01T15:59:29Z"
+      "state": "available",
+      "updated_at": "2026-11-01T20:30:51Z"
     },
     "https://londonpogomap.com": {
       "state": "available",
