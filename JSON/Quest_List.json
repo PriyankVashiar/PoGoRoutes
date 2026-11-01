@@ -529,7 +529,8 @@
       },
       "722": {
         "0": [
-          "Power up Pokémon 7 times"
+          "Power up Pokémon 7 times",
+          "Catch 13 Ghost-type Pokémon"
         ]
       },
       "285": {
@@ -997,14 +998,40 @@
           "Spin 5 PokéStops"
         ]
       },
-      "333": {
+      "971": {
         "0": [
-          "Make 10 Curveball Throws"
+          "Catch 13 Ghost-type Pokémon",
+          "Make 6 Nice Throws"
+        ]
+      },
+      "769": {
+        "0": [
+          "Make 6 Nice Throws"
+        ]
+      },
+      "607": {
+        "0": [
+          "Make 6 Nice Throws"
+        ]
+      },
+      "656": {
+        "0": [
+          "Catch 13 Ghost-type Pokémon"
         ]
       },
       "303": {
         "0": [
           "Hatch 2 Eggs"
+        ]
+      },
+      "333": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "610": {
+        "0": [
+          "Catch a Dragon-type Pokémon"
         ]
       }
     },
@@ -1062,13 +1089,18 @@
         "10": [
           "Power up Pokémon 5 times"
         ]
+      },
+      "302": {
+        "13": [
+          "Catch 13 Pokémon"
+        ]
       }
     }
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-01T12:59:30Z"
+      "state": "available",
+      "updated_at": "2026-11-01T16:30:52Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
