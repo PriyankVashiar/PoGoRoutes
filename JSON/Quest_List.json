@@ -1107,8 +1107,8 @@
       "updated_at": "2026-11-01T20:30:51Z"
     },
     "https://londonpogomap.com": {
-      "state": "available",
-      "updated_at": "2026-11-01T01:01:08Z"
+      "state": "empty",
+      "updated_at": "2026-11-01T23:59:30Z"
     },
     "https://nycpokemap.com": {
       "state": "empty",
