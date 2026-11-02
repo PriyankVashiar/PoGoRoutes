@@ -180,8 +180,7 @@
       },
       "41": {
         "0": [
-          "Win a raid",
-          "Catch 13 Ghost-type Pokémon"
+          "Win a raid"
         ]
       },
       "221": {
@@ -370,8 +369,7 @@
       },
       "355": {
         "0": [
-          "Catch 10 Ghost-type Pokémon",
-          "Make 6 Nice Throws"
+          "Catch 10 Ghost-type Pokémon"
         ]
       },
       "67": {
@@ -1013,26 +1011,6 @@
         "0": [
           "Spin 5 PokéStops"
         ]
-      },
-      "710": {
-        "0": [
-          "Make 6 Nice Throws"
-        ]
-      },
-      "200": {
-        "0": [
-          "Make 6 Nice Throws"
-        ]
-      },
-      "714": {
-        "0": [
-          "Catch 13 Ghost-type Pokémon"
-        ]
-      },
-      "393": {
-        "0": [
-          "Catch 13 Ghost-type Pokémon"
-        ]
       }
     },
     "12": {
@@ -1115,8 +1093,8 @@
       "updated_at": "2026-11-02T06:00:38Z"
     },
     "https://vanpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-01T08:00:41Z"
+      "state": "empty",
+      "updated_at": "2026-11-02T08:00:45Z"
     }
   }
 }
