@@ -128,6 +128,10 @@
           "Catch a Dragon-type Pokémon",
           "Make 3 Great Curveball Throws in a row",
           "Catch a Ditto"
+        ],
+        "2": [
+          "Win a Max Battle",
+          "Win a raid"
         ]
       }
     },
@@ -163,6 +167,10 @@
           "Make 3 Great Curveball Throws in a row",
           "Catch a Ditto",
           "Catch a Dragon-type Pokémon"
+        ],
+        "5000": [
+          "Catch a Dynamax Ralts",
+          "Catch a Dynamax Machop"
         ]
       }
     },
@@ -339,7 +347,8 @@
       },
       "52": {
         "0": [
-          "Defeat a Team GO Rocket Grunt"
+          "Defeat a Team GO Rocket Grunt",
+          "Power up Steel-type Pokémon 5 times"
         ]
       },
       "928": {
@@ -438,7 +447,9 @@
       "147": {
         "0": [
           "Make 2 Excellent Throws",
-          "Catch a Dragon-type Pokémon"
+          "Catch a Dragon-type Pokémon",
+          "Power up Dragon-type Pokémon 5 times",
+          "Win a raid"
         ]
       },
       "198": {
@@ -644,7 +655,8 @@
       },
       "303": {
         "0": [
-          "Hatch 2 Eggs"
+          "Hatch 2 Eggs",
+          "Win a Max Battle"
         ]
       },
       "702": {
@@ -836,7 +848,9 @@
       },
       "304": {
         "0": [
-          "Spin 3 PokéStops or Gyms"
+          "Spin 3 PokéStops or Gyms",
+          "Catch 10 Pokémon",
+          "Power up Steel-type Pokémon 5 times"
         ]
       },
       "74": {
@@ -886,7 +900,8 @@
       },
       "123": {
         "0": [
-          "Hatch an Egg"
+          "Hatch an Egg",
+          "Win a raid"
         ]
       },
       "105": {
@@ -952,7 +967,9 @@
       },
       "371": {
         "0": [
-          "Catch a Dragon-type Pokémon"
+          "Catch a Dragon-type Pokémon",
+          "Win a Max Battle",
+          "Power up Dragon-type Pokémon 5 times"
         ]
       },
       "126": {
@@ -973,6 +990,29 @@
       "374": {
         "0": [
           "Make 3 Excellent Throws in a row"
+        ]
+      },
+      "116": {
+        "0": [
+          "Power up Dragon-type Pokémon 5 times",
+          "Catch 10 Pokémon"
+        ]
+      },
+      "81": {
+        "0": [
+          "Catch 10 Pokémon",
+          "Power up Steel-type Pokémon 5 times"
+        ]
+      },
+      "690": {
+        "0": [
+          "Catch 10 Pokémon",
+          "Power up Dragon-type Pokémon 5 times"
+        ]
+      },
+      "777": {
+        "0": [
+          "Power up Steel-type Pokémon 5 times"
         ]
       }
     },
@@ -1035,8 +1075,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-09T12:59:28Z"
+      "state": "available",
+      "updated_at": "2026-11-09T16:30:57Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
