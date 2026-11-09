@@ -169,8 +169,8 @@
           "Catch a Dragon-type Pokémon"
         ],
         "5000": [
-          "Catch a Dynamax Ralts",
-          "Catch a Dynamax Machop"
+          "Catch a Dynamax Machop",
+          "Catch a Dynamax Ralts"
         ]
       }
     },
@@ -448,8 +448,8 @@
         "0": [
           "Make 2 Excellent Throws",
           "Catch a Dragon-type Pokémon",
-          "Power up Dragon-type Pokémon 5 times",
-          "Win a raid"
+          "Win a raid",
+          "Power up Dragon-type Pokémon 5 times"
         ]
       },
       "198": {
@@ -994,14 +994,8 @@
       },
       "116": {
         "0": [
-          "Power up Dragon-type Pokémon 5 times",
-          "Catch 10 Pokémon"
-        ]
-      },
-      "81": {
-        "0": [
           "Catch 10 Pokémon",
-          "Power up Steel-type Pokémon 5 times"
+          "Power up Dragon-type Pokémon 5 times"
         ]
       },
       "690": {
@@ -1012,6 +1006,12 @@
       },
       "777": {
         "0": [
+          "Power up Steel-type Pokémon 5 times"
+        ]
+      },
+      "81": {
+        "0": [
+          "Catch 10 Pokémon",
           "Power up Steel-type Pokémon 5 times"
         ]
       }
@@ -1079,8 +1079,8 @@
       "updated_at": "2026-11-09T16:30:57Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-09T15:59:27Z"
+      "state": "available",
+      "updated_at": "2026-11-09T20:30:54Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
