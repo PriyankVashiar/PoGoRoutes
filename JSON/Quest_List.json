@@ -1001,6 +1001,11 @@
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
+      },
+      "610": {
+        "0": [
+          "Catch a Dragon-type Pokémon"
+        ]
       }
     },
     "12": {
@@ -1062,8 +1067,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-10T12:59:27Z"
+      "state": "available",
+      "updated_at": "2026-11-10T16:31:03Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
