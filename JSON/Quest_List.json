@@ -48,7 +48,8 @@
         "3": [
           "Power up Pokémon 15 times",
           "Catch a Dragon-type Pokémon",
-          "Make 3 Great Curveball Throws in a row"
+          "Make 3 Great Curveball Throws in a row",
+          "Catch a Ditto"
         ]
       },
       "705": {
@@ -176,7 +177,8 @@
       "371": {
         "0": [
           "Win a Max Battle",
-          "Power up Dragon-type Pokémon 5 times"
+          "Power up Dragon-type Pokémon 5 times",
+          "Catch a Dragon-type Pokémon"
         ]
       },
       "690": {
@@ -516,7 +518,8 @@
       },
       "79-g": {
         "0": [
-          "Explore 2 km"
+          "Explore 2 km",
+          "Spin 5 PokéStops or Gyms"
         ]
       },
       "54": {
@@ -1071,8 +1074,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-12T12:59:31Z"
+      "state": "available",
+      "updated_at": "2026-11-12T16:31:01Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
