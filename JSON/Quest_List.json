@@ -107,8 +107,7 @@
       "706": {
         "2": [
           "Catch a Dragon-type Pokémon",
-          "Make 3 Great Curveball Throws in a row",
-          "Catch a Ditto"
+          "Make 3 Great Curveball Throws in a row"
         ],
         "1": [
           "Earn 10000 XP"
@@ -130,8 +129,7 @@
         ],
         "10": [
           "Catch a Dragon-type Pokémon",
-          "Catch a Ditto",
-          "Make 3 Great Curveball Throws in a row"
+          "Catch a Ditto"
         ]
       }
     },
@@ -999,16 +997,6 @@
         "0": [
           "Hatch 2 Eggs"
         ]
-      },
-      "246": {
-        "0": [
-          "Make 3 Excellent Throws in a row"
-        ]
-      },
-      "374": {
-        "0": [
-          "Make 3 Excellent Throws in a row"
-        ]
       }
     },
     "12": {
@@ -1074,8 +1062,8 @@
       "updated_at": "2026-11-13T12:59:27Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-12T20:30:58Z"
+      "state": "empty",
+      "updated_at": "2026-11-13T15:59:25Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
