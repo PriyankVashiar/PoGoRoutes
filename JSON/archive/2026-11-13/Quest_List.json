@@ -1000,17 +1000,17 @@
           "Hatch 2 Eggs"
         ]
       },
-      "374": {
-        "0": [
-          "Make 3 Excellent Throws in a row"
-        ]
-      },
       "443": {
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
       },
       "246": {
+        "0": [
+          "Make 3 Excellent Throws in a row"
+        ]
+      },
+      "374": {
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
@@ -1079,8 +1079,8 @@
       "updated_at": "2026-11-13T16:30:53Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-13T15:59:25Z"
+      "state": "available",
+      "updated_at": "2026-11-13T20:30:57Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
