@@ -107,7 +107,8 @@
       "706": {
         "2": [
           "Catch a Dragon-type Pokémon",
-          "Make 3 Great Curveball Throws in a row"
+          "Make 3 Great Curveball Throws in a row",
+          "Catch a Ditto"
         ],
         "1": [
           "Earn 10000 XP"
@@ -129,7 +130,8 @@
         ],
         "10": [
           "Catch a Dragon-type Pokémon",
-          "Catch a Ditto"
+          "Catch a Ditto",
+          "Make 3 Great Curveball Throws in a row"
         ]
       }
     },
@@ -997,6 +999,21 @@
         "0": [
           "Hatch 2 Eggs"
         ]
+      },
+      "374": {
+        "0": [
+          "Make 3 Excellent Throws in a row"
+        ]
+      },
+      "443": {
+        "0": [
+          "Make 3 Excellent Throws in a row"
+        ]
+      },
+      "246": {
+        "0": [
+          "Make 3 Excellent Throws in a row"
+        ]
       }
     },
     "12": {
@@ -1058,8 +1075,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-13T12:59:27Z"
+      "state": "available",
+      "updated_at": "2026-11-13T16:30:53Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
