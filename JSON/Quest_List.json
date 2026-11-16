@@ -167,12 +167,12 @@
           "Make 3 Great Curveball Throws in a row",
           "Catch a Dragon-type Pokémon"
         ],
+        "2000": [
+          "Explore 1 km",
+          "Win a Max Battle"
+        ],
         "5000": [
           "Unlock a Max Move"
-        ],
-        "2000": [
-          "Win a Max Battle",
-          "Explore 1 km"
         ]
       }
     },
@@ -996,14 +996,14 @@
           "Catch 8 Pokémon"
         ]
       },
-      "810": {
+      "813": {
         "0": [
           "Catch 8 Pokémon"
         ]
       },
-      "813": {
+      "780": {
         "0": [
-          "Catch 8 Pokémon"
+          "Win a Max Battle"
         ]
       },
       "884": {
@@ -1011,9 +1011,9 @@
           "Win a Max Battle"
         ]
       },
-      "780": {
+      "810": {
         "0": [
-          "Win a Max Battle"
+          "Catch 8 Pokémon"
         ]
       }
     },
@@ -1080,8 +1080,8 @@
       "updated_at": "2026-11-16T16:31:04Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-16T15:59:28Z"
+      "state": "available",
+      "updated_at": "2026-11-16T20:30:59Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
