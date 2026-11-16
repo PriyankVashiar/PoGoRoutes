@@ -16,7 +16,8 @@
         ],
         "3": [
           "Make 3 Great Curveball Throws",
-          "Make 3 Great Throws in a row"
+          "Make 3 Great Throws in a row",
+          "Power up Pokémon 8 times"
         ],
         "1": [
           "Make 3 Great Throws",
@@ -33,7 +34,8 @@
           "Catch a Ditto"
         ],
         "1": [
-          "Earn 10000 XP"
+          "Earn 10000 XP",
+          "Make an Excellent Throw"
         ]
       },
       "701": {
@@ -127,7 +129,8 @@
       },
       "708": {
         "1": [
-          "Earn 10000 Stardust"
+          "Earn 10000 Stardust",
+          "Make an Excellent Throw"
         ]
       }
     },
@@ -163,6 +166,13 @@
           "Catch a Ditto",
           "Make 3 Great Curveball Throws in a row",
           "Catch a Dragon-type Pokémon"
+        ],
+        "5000": [
+          "Unlock a Max Move"
+        ],
+        "2000": [
+          "Win a Max Battle",
+          "Explore 1 km"
         ]
       }
     },
@@ -423,7 +433,8 @@
       "133": {
         "0": [
           "Send 3 Gifts and add a sticker to each",
-          "Evolve a Pokémon"
+          "Evolve a Pokémon",
+          "Explore 1 km"
         ]
       },
       "404": {
@@ -501,7 +512,8 @@
       },
       "1": {
         "0": [
-          "Power up Pokémon 3 times"
+          "Power up Pokémon 3 times",
+          "Catch 8 Pokémon"
         ]
       },
       "751": {
@@ -565,7 +577,8 @@
       },
       "7": {
         "0": [
-          "Power up Pokémon 3 times"
+          "Power up Pokémon 3 times",
+          "Catch 8 Pokémon"
         ]
       },
       "134": {
@@ -576,7 +589,8 @@
       "129": {
         "0": [
           "Catch 7 Pokémon",
-          "Make 10 Nice Throws"
+          "Make 10 Nice Throws",
+          "Power up Pokémon 8 times"
         ]
       },
       "345": {
@@ -694,7 +708,8 @@
       },
       "349": {
         "0": [
-          "Hatch 2 Eggs"
+          "Hatch 2 Eggs",
+          "Power up Pokémon 8 times"
         ]
       },
       "84": {
@@ -714,7 +729,8 @@
       },
       "4": {
         "0": [
-          "Power up Pokémon 3 times"
+          "Power up Pokémon 3 times",
+          "Catch 8 Pokémon"
         ]
       },
       "605": {
@@ -974,6 +990,31 @@
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
+      },
+      "816": {
+        "0": [
+          "Catch 8 Pokémon"
+        ]
+      },
+      "810": {
+        "0": [
+          "Catch 8 Pokémon"
+        ]
+      },
+      "813": {
+        "0": [
+          "Catch 8 Pokémon"
+        ]
+      },
+      "884": {
+        "0": [
+          "Win a Max Battle"
+        ]
+      },
+      "780": {
+        "0": [
+          "Win a Max Battle"
+        ]
       }
     },
     "12": {
@@ -1035,8 +1076,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-16T12:59:28Z"
+      "state": "available",
+      "updated_at": "2026-11-16T16:31:04Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
