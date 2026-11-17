@@ -124,7 +124,9 @@
           "Make 3 Nice Throws in a row"
         ],
         "10": [
-          "Make 3 Great Curveball Throws in a row"
+          "Make 3 Great Curveball Throws in a row",
+          "Catch a Dragon-type Pokémon",
+          "Catch a Ditto"
         ],
         "5": [
           "Make 3 Great Throws in a row",
@@ -1074,8 +1076,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-17T12:59:39Z"
+      "state": "available",
+      "updated_at": "2026-11-17T16:31:00Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
