@@ -1077,11 +1077,11 @@
   "city_status": {
     "https://sydneypogomap.com": {
       "state": "available",
-      "updated_at": "2026-11-17T16:31:00Z"
+      "updated_at": "2026-11-18T16:31:14Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-17T20:31:06Z"
+      "state": "empty",
+      "updated_at": "2026-11-18T15:59:27Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
