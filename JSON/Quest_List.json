@@ -700,7 +700,8 @@
       },
       "147": {
         "0": [
-          "Make 2 Excellent Throws"
+          "Make 2 Excellent Throws",
+          "Catch a Dragon-type Pokémon"
         ]
       },
       "92": {
@@ -1004,6 +1005,16 @@
         "0": [
           "Spin 5 PokéStops"
         ]
+      },
+      "610": {
+        "0": [
+          "Catch a Dragon-type Pokémon"
+        ]
+      },
+      "374": {
+        "0": [
+          "Make 3 Excellent Throws in a row"
+        ]
       }
     },
     "12": {
@@ -1065,8 +1076,8 @@
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-19T12:59:33Z"
+      "state": "available",
+      "updated_at": "2026-11-19T16:31:09Z"
     },
     "https://sgpokemap.com": {
       "state": "empty",
