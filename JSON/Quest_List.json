@@ -700,8 +700,7 @@
       },
       "147": {
         "0": [
-          "Make 2 Excellent Throws",
-          "Catch a Dragon-type Pokémon"
+          "Make 2 Excellent Throws"
         ]
       },
       "92": {
@@ -1005,16 +1004,6 @@
         "0": [
           "Spin 5 PokéStops"
         ]
-      },
-      "610": {
-        "0": [
-          "Catch a Dragon-type Pokémon"
-        ]
-      },
-      "374": {
-        "0": [
-          "Make 3 Excellent Throws in a row"
-        ]
       }
     },
     "12": {
@@ -1080,8 +1069,8 @@
       "updated_at": "2026-11-19T12:59:33Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-18T20:31:03Z"
+      "state": "empty",
+      "updated_at": "2026-11-19T15:59:33Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
