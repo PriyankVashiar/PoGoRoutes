@@ -128,9 +128,7 @@
           "Earn 10000 XP"
         ],
         "2": [
-          "Catch a Ditto",
-          "Catch a Dragon-type Pokémon",
-          "Make 3 Great Curveball Throws in a row"
+          "Catch a Ditto"
         ]
       }
     },
@@ -1010,11 +1008,6 @@
         "0": [
           "Trade a Pokémon"
         ]
-      },
-      "371": {
-        "0": [
-          "Catch a Dragon-type Pokémon"
-        ]
       }
     },
     "12": {
@@ -1080,8 +1073,8 @@
       "updated_at": "2026-11-20T12:59:31Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-19T20:30:58Z"
+      "state": "empty",
+      "updated_at": "2026-11-20T15:59:32Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
