@@ -1010,11 +1010,6 @@
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
-      },
-      "374": {
-        "0": [
-          "Make 3 Excellent Throws in a row"
-        ]
       }
     },
     "12": {
@@ -1077,11 +1072,11 @@
   "city_status": {
     "https://sydneypogomap.com": {
       "state": "available",
-      "updated_at": "2026-11-21T16:30:57Z"
+      "updated_at": "2026-11-22T16:30:52Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-21T20:30:53Z"
+      "state": "empty",
+      "updated_at": "2026-11-22T15:59:26Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
