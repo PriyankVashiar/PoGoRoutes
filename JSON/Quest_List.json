@@ -120,7 +120,8 @@
         "3": [
           "Power up Pokémon 15 times",
           "Make 3 Great Curveball Throws in a row",
-          "Catch a Ditto"
+          "Catch a Ditto",
+          "Catch a Dragon-type Pokémon"
         ],
         "1": [
           "Catch 25 Pokémon",
@@ -314,7 +315,8 @@
       "215": {
         "0": [
           "Catch 10 Dark-type Pokémon",
-          "Spin 5 PokéStops"
+          "Spin 5 PokéStops",
+          "Hatch 2 Eggs"
         ]
       },
       "767": {
@@ -1078,8 +1080,8 @@
       "updated_at": "2026-11-23T12:59:30Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-23T15:59:29Z"
+      "state": "available",
+      "updated_at": "2026-11-23T20:30:58Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
