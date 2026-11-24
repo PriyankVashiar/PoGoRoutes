@@ -129,6 +129,11 @@
         "1": [
           "Earn 10000 Stardust"
         ]
+      },
+      "1302": {
+        "1": [
+          "Spin a PokéStop you haven't visited before"
+        ]
       }
     },
     "3": {
@@ -163,6 +168,9 @@
           "Catch a Dragon-type Pokémon",
           "Catch a Ditto",
           "Make 3 Great Curveball Throws in a row"
+        ],
+        "10000": [
+          "Spin a PokéStop you haven't visited before"
         ]
       }
     },
@@ -227,7 +235,8 @@
       },
       "605": {
         "0": [
-          "Make 3 Great Throws"
+          "Make 3 Great Throws",
+          "Explore 1 km"
         ]
       },
       "320": {
@@ -355,7 +364,8 @@
       },
       "546": {
         "0": [
-          "Take a snapshot of a wild Pokémon"
+          "Take a snapshot of a wild Pokémon",
+          "Catch 10 Pokémon"
         ]
       },
       "608": {
@@ -872,7 +882,8 @@
       },
       "309": {
         "0": [
-          "Explore 2 km"
+          "Explore 2 km",
+          "Catch 10 Pokémon"
         ]
       },
       "659": {
@@ -974,6 +985,31 @@
         "0": [
           "Catch a Dragon-type Pokémon"
         ]
+      },
+      "942": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "120": {
+        "0": [
+          "Explore 1 km"
+        ]
+      },
+      "973": {
+        "0": [
+          "Catch 10 Pokémon"
+        ]
+      },
+      "840": {
+        "0": [
+          "Use a Lure Module at a PokéStop"
+        ]
+      },
+      "971": {
+        "0": [
+          "Catch 10 Pokémon"
+        ]
       }
     },
     "12": {
@@ -997,6 +1033,9 @@
       "15": {
         "10": [
           "Power up Pokémon 5 times"
+        ],
+        "25": [
+          "Mega Evolve a Pokémon"
         ]
       },
       "306": {
@@ -1029,18 +1068,31 @@
       "310": {
         "10": [
           "Power up Pokémon 5 times"
+        ],
+        "25": [
+          "Mega Evolve a Pokémon"
+        ]
+      },
+      "229": {
+        "25": [
+          "Mega Evolve a Pokémon"
+        ]
+      },
+      "302": {
+        "25": [
+          "Mega Evolve a Pokémon"
         ]
       }
     }
   },
   "city_status": {
     "https://sydneypogomap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-23T12:59:30Z"
+      "state": "available",
+      "updated_at": "2026-11-24T16:30:58Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-23T20:30:58Z"
+      "state": "empty",
+      "updated_at": "2026-11-24T15:59:32Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
