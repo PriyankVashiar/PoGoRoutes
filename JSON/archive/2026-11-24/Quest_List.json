@@ -986,19 +986,19 @@
           "Catch a Dragon-type Pokémon"
         ]
       },
-      "942": {
-        "0": [
-          "Hatch an Egg"
-        ]
-      },
       "120": {
         "0": [
           "Explore 1 km"
         ]
       },
-      "973": {
+      "971": {
         "0": [
           "Catch 10 Pokémon"
+        ]
+      },
+      "942": {
+        "0": [
+          "Hatch an Egg"
         ]
       },
       "840": {
@@ -1006,7 +1006,7 @@
           "Use a Lure Module at a PokéStop"
         ]
       },
-      "971": {
+      "973": {
         "0": [
           "Catch 10 Pokémon"
         ]
@@ -1091,8 +1091,8 @@
       "updated_at": "2026-11-24T16:30:58Z"
     },
     "https://sgpokemap.com": {
-      "state": "empty",
-      "updated_at": "2026-11-24T15:59:32Z"
+      "state": "available",
+      "updated_at": "2026-11-24T20:30:56Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
