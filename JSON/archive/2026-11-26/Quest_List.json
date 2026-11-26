@@ -1006,6 +1006,21 @@
           "Hatch 2 Eggs"
         ]
       },
+      "94": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "946": {
+        "0": [
+          "Use an Incense"
+        ]
+      },
+      "426": {
+        "0": [
+          "Win a raid"
+        ]
+      },
       "374": {
         "0": [
           "Make 3 Excellent Throws in a row"
@@ -1088,11 +1103,11 @@
   "city_status": {
     "https://sydneypogomap.com": {
       "state": "available",
-      "updated_at": "2026-11-25T16:31:02Z"
+      "updated_at": "2026-11-26T16:30:56Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-25T20:30:54Z"
+      "state": "empty",
+      "updated_at": "2026-11-26T15:59:23Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
