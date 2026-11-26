@@ -1,101 +1,99 @@
 {
   "categories": {
     "2": {
-      "1302": {
-        "1": [
-          "Spin a PokéStop you haven't visited before"
-        ]
-      },
-      "1301": {
-        "3": [
+      "3": {
+        "2": [
+          "Make an Excellent Throw",
+          "Make 3 Nice Throws in a row"
+        ],
+        "10": [
           "Catch a Ditto",
-          "Power up Pokémon 15 times",
           "Catch a Dragon-type Pokémon",
           "Make 3 Great Curveball Throws in a row"
         ],
-        "1": [
-          "Catch 25 Pokémon",
+        "5": [
           "Make 3 Great Throws in a row",
-          "Win a raid",
-          "Hatch 2 Eggs",
-          "Send 3 Gifts to friends",
-          "Catch 8 Pokémon",
           "Make 3 Great Curveball Throws"
-        ]
-      },
-      "1": {
-        "5": [
-          "Make 3 Great Throws",
-          "Make 5 Nice Throws",
-          "Catch 5 Pokémon with Weather Boost",
-          "Make 2 Nice Curveball Throws in a row",
-          "Catch 10 Pokémon"
-        ],
-        "10": [
-          "Make 3 Great Curveball Throws",
-          "Make 3 Great Throws in a row"
-        ]
-      },
-      "2": {
-        "5": [
-          "Make an Excellent Throw",
-          "Spin 3 PokéStops or Gyms",
-          "Catch 10 Grass-type Pokémon",
-          "Catch 10 Pokémon with Weather Boost",
-          "Make 3 Nice Throws in a row",
-          "Make 5 Curveball Throws in a row",
-          "Catch 10 Water-type Pokémon",
-          "Catch 10 Fire-type Pokémon",
-          "Catch 10 Normal-type Pokémon",
-          "Use 5 Berries to help catch Pokémon"
         ]
       },
       "701": {
         "3": [
-          "Catch 5 Pokémon with Weather Boost",
-          "Make 3 Great Throws",
-          "Catch 10 Pokémon",
           "Make 2 Nice Curveball Throws in a row",
-          "Make 5 Nice Throws"
+          "Make 5 Nice Throws",
+          "Make 3 Great Throws",
+          "Catch 5 Pokémon with Weather Boost",
+          "Catch 10 Pokémon"
         ],
         "6": [
-          "Use 5 Berries to help catch Pokémon",
-          "Catch 10 Water-type Pokémon",
-          "Spin 3 PokéStops or Gyms",
-          "Catch 10 Grass-type Pokémon",
-          "Make 5 Curveball Throws in a row",
-          "Catch 10 Normal-type Pokémon",
           "Catch 10 Pokémon with Weather Boost",
-          "Catch 10 Fire-type Pokémon"
+          "Catch 10 Fire-type Pokémon",
+          "Catch 10 Grass-type Pokémon",
+          "Spin 3 PokéStops or Gyms",
+          "Use 5 Berries to help catch Pokémon",
+          "Catch 10 Normal-type Pokémon",
+          "Make 5 Curveball Throws in a row",
+          "Catch 10 Water-type Pokémon"
         ],
         "9": [
           "Make 3 Great Curveball Throws",
           "Make 3 Great Throws in a row"
         ]
       },
+      "1": {
+        "5": [
+          "Catch 5 Pokémon with Weather Boost",
+          "Catch 10 Pokémon",
+          "Make 3 Great Throws",
+          "Make 2 Nice Curveball Throws in a row",
+          "Make 5 Nice Throws"
+        ],
+        "10": [
+          "Make 3 Great Throws in a row",
+          "Make 3 Great Curveball Throws"
+        ]
+      },
       "705": {
         "1": [
-          "Catch 5 Pokémon with Weather Boost",
-          "Make 5 Nice Throws",
+          "Catch 10 Pokémon",
           "Make 2 Nice Curveball Throws in a row",
           "Make 3 Great Throws",
-          "Catch 10 Pokémon"
+          "Catch 5 Pokémon with Weather Boost",
+          "Make 5 Nice Throws"
         ],
         "2": [
-          "Spin 3 PokéStops or Gyms",
-          "Make 3 Nice Throws in a row",
-          "Catch 10 Water-type Pokémon",
+          "Catch 10 Grass-type Pokémon",
           "Catch 10 Normal-type Pokémon",
-          "Catch 10 Pokémon with Weather Boost",
+          "Make 3 Nice Throws in a row",
           "Make an Excellent Throw",
+          "Catch 10 Pokémon with Weather Boost",
           "Make 5 Curveball Throws in a row",
+          "Spin 3 PokéStops or Gyms",
+          "Catch 10 Water-type Pokémon",
           "Catch 10 Fire-type Pokémon",
-          "Use 5 Berries to help catch Pokémon",
-          "Catch 10 Grass-type Pokémon"
+          "Use 5 Berries to help catch Pokémon"
         ],
         "3": [
           "Make 3 Great Curveball Throws",
           "Make 3 Great Throws in a row"
+        ]
+      },
+      "1302": {
+        "1": [
+          "Spin a PokéStop you haven't visited before"
+        ]
+      },
+      "2": {
+        "5": [
+          "Make 5 Curveball Throws in a row",
+          "Catch 10 Fire-type Pokémon",
+          "Make 3 Nice Throws in a row",
+          "Make an Excellent Throw",
+          "Catch 10 Pokémon with Weather Boost",
+          "Catch 10 Water-type Pokémon",
+          "Use 5 Berries to help catch Pokémon",
+          "Catch 10 Normal-type Pokémon",
+          "Catch 10 Grass-type Pokémon",
+          "Spin 3 PokéStops or Gyms"
         ]
       },
       "709": {
@@ -105,67 +103,69 @@
           "Catch 50 Pokémon"
         ]
       },
+      "1301": {
+        "1": [
+          "Hatch 2 Eggs",
+          "Win a raid",
+          "Catch 25 Pokémon",
+          "Make 3 Great Curveball Throws",
+          "Send 3 Gifts to friends",
+          "Catch 8 Pokémon",
+          "Make 3 Great Throws in a row"
+        ],
+        "3": [
+          "Power up Pokémon 15 times",
+          "Catch a Dragon-type Pokémon",
+          "Catch a Ditto",
+          "Make 3 Great Curveball Throws in a row"
+        ]
+      },
       "708": {
         "1": [
           "Earn 10000 Stardust"
         ]
       },
-      "3": {
-        "2": [
-          "Make an Excellent Throw",
-          "Make 3 Nice Throws in a row"
-        ],
-        "5": [
-          "Make 3 Great Curveball Throws",
-          "Make 3 Great Throws in a row"
-        ],
-        "10": [
-          "Catch a Dragon-type Pokémon",
-          "Make 3 Great Curveball Throws in a row",
-          "Catch a Ditto"
-        ]
-      },
       "706": {
+        "2": [
+          "Make 3 Great Curveball Throws in a row",
+          "Catch a Dragon-type Pokémon",
+          "Catch a Ditto"
+        ],
         "1": [
           "Earn 10000 XP"
-        ],
-        "2": [
-          "Make 3 Great Curveball Throws in a row",
-          "Catch a Dragon-type Pokémon",
-          "Catch a Ditto"
         ]
       }
     },
     "3": {
       "0": {
-        "10000": [
-          "Spin a PokéStop you haven't visited before"
-        ],
         "500": [
-          "Make 5 Curveball Throws in a row",
-          "Catch 10 Pokémon with Weather Boost",
-          "Make an Excellent Throw",
-          "Make 3 Nice Throws in a row",
-          "Use 5 Berries to help catch Pokémon",
           "Catch 10 Normal-type Pokémon",
+          "Catch 10 Pokémon with Weather Boost",
+          "Use 5 Berries to help catch Pokémon",
+          "Make 5 Curveball Throws in a row",
           "Catch 10 Water-type Pokémon",
-          "Spin 3 PokéStops or Gyms",
           "Catch 10 Fire-type Pokémon",
-          "Catch 10 Grass-type Pokémon"
+          "Catch 10 Grass-type Pokémon",
+          "Make 3 Nice Throws in a row",
+          "Make an Excellent Throw",
+          "Spin 3 PokéStops or Gyms"
         ],
         "200": [
-          "Make 2 Nice Curveball Throws in a row",
+          "Make 3 Great Throws",
+          "Catch 10 Pokémon",
           "Catch 5 Pokémon with Weather Boost",
           "Make 5 Nice Throws",
-          "Make 3 Great Throws",
-          "Catch 10 Pokémon"
+          "Make 2 Nice Curveball Throws in a row"
         ],
         "1000": [
-          "Send 3 Gifts to friends",
-          "Make 3 Great Throws in a row",
           "Win a Max Battle",
+          "Send 3 Gifts to friends",
+          "Make 3 Great Curveball Throws",
           "Catch 8 Pokémon",
-          "Make 3 Great Curveball Throws"
+          "Make 3 Great Throws in a row"
+        ],
+        "10000": [
+          "Spin a PokéStop you haven't visited before"
         ],
         "1500": [
           "Make 3 Great Curveball Throws in a row",
@@ -175,14 +175,15 @@
       }
     },
     "7": {
-      "840": {
+      "605": {
         "0": [
-          "Use a Lure Module at a PokéStop"
+          "Explore 1 km",
+          "Make 3 Great Throws"
         ]
       },
-      "942": {
+      "221": {
         "0": [
-          "Hatch an Egg"
+          "Win a raid"
         ]
       },
       "309": {
@@ -191,365 +192,19 @@
           "Explore 2 km"
         ]
       },
-      "605": {
+      "942": {
         "0": [
-          "Explore 1 km",
-          "Make 3 Great Throws"
+          "Hatch an Egg"
         ]
       },
-      "509": {
+      "840": {
         "0": [
-          "Catch 10 Dark-type Pokémon"
+          "Use a Lure Module at a PokéStop"
         ]
       },
       "120": {
         "0": [
           "Explore 1 km"
-        ]
-      },
-      "79-g": {
-        "0": [
-          "Explore 2 km",
-          "Spin 5 PokéStops or Gyms"
-        ]
-      },
-      "973": {
-        "0": [
-          "Catch 10 Pokémon"
-        ]
-      },
-      "52": {
-        "0": [
-          "Defeat a Team GO Rocket Grunt"
-        ]
-      },
-      "688": {
-        "0": [
-          "Make 3 Great Throws"
-        ]
-      },
-      "546": {
-        "0": [
-          "Catch 10 Pokémon",
-          "Take a snapshot of a wild Pokémon"
-        ]
-      },
-      "215": {
-        "0": [
-          "Spin 5 PokéStops",
-          "Catch 10 Dark-type Pokémon",
-          "Hatch 2 Eggs"
-        ]
-      },
-      "971": {
-        "0": [
-          "Catch 10 Pokémon"
-        ]
-      },
-      "117": {
-        "0": [
-          "Evolve a Pokémon"
-        ]
-      },
-      "548": {
-        "0": [
-          "Catch 10 Grass-type Pokémon"
-        ]
-      },
-      "613": {
-        "0": [
-          "Hatch an Egg"
-        ]
-      },
-      "434": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "459": {
-        "0": [
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "303": {
-        "0": [
-          "Hatch 2 Eggs"
-        ]
-      },
-      "399": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "728": {
-        "0": [
-          "Power up Pokémon 7 times"
-        ]
-      },
-      "39": {
-        "0": [
-          "Earn 2 Candies walking with your buddy",
-          "Send 3 Gifts and add a sticker to each"
-        ]
-      },
-      "103": {
-        "0": [
-          "Win 5 raids"
-        ]
-      },
-      "105": {
-        "0": [
-          "Hatch an Egg",
-          "Win 5 raids"
-        ]
-      },
-      "608": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "566": {
-        "0": [
-          "Win a three-star raid or higher"
-        ]
-      },
-      "191": {
-        "0": [
-          "Catch 10 Grass-type Pokémon",
-          "Make 10 Nice Throws"
-        ]
-      },
-      "263": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "119": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "185": {
-        "0": [
-          "Make 5 Nice Throws",
-          "Hatch an Egg"
-        ]
-      },
-      "375": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "449": {
-        "0": [
-          "Spin 5 PokéStops",
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "60": {
-        "0": [
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "273": {
-        "0": [
-          "Catch 10 Grass-type Pokémon"
-        ]
-      },
-      "320": {
-        "0": [
-          "Explore 2 km"
-        ]
-      },
-      "915": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "280": {
-        "0": [
-          "Spin 3 PokéStops or Gyms"
-        ]
-      },
-      "328": {
-        "0": [
-          "Take a snapshot of a wild Pokémon"
-        ]
-      },
-      "404": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "427": {
-        "0": [
-          "Earn 2 Candies walking with your buddy"
-        ]
-      },
-      "507": {
-        "0": [
-          "Explore 2 km"
-        ]
-      },
-      "50": {
-        "0": [
-          "Make 5 Nice Throws"
-        ]
-      },
-      "622": {
-        "0": [
-          "Catch 10 Ghost-type Pokémon"
-        ]
-      },
-      "129": {
-        "0": [
-          "Catch 7 Pokémon",
-          "Make 10 Nice Throws"
-        ]
-      },
-      "133": {
-        "0": [
-          "Evolve a Pokémon",
-          "Send 3 Gifts and add a sticker to each"
-        ]
-      },
-      "917": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "347": {
-        "0": [
-          "Hatch an Egg",
-          "Make 3 Great Throws in a row"
-        ]
-      },
-      "732": {
-        "0": [
-          "Make 10 Nice Throws"
-        ]
-      },
-      "24": {
-        "0": [
-          "Defeat a Team GO Rocket Grunt"
-        ]
-      },
-      "93": {
-        "0": [
-          "Trade a Pokémon"
-        ]
-      },
-      "926": {
-        "0": [
-          "Hatch an Egg"
-        ]
-      },
-      "278": {
-        "0": [
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "35": {
-        "0": [
-          "Send 3 Gifts and add a sticker to each"
-        ]
-      },
-      "742": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "221": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "176": {
-        "0": [
-          "Send 3 Gifts and add a sticker to each"
-        ]
-      },
-      "751": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "134": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "827": {
-        "0": [
-          "Catch 10 Dark-type Pokémon"
-        ]
-      },
-      "142": {
-        "0": [
-          "Win 5 raids"
-        ]
-      },
-      "686": {
-        "0": [
-          "Catch 10 Dark-type Pokémon"
-        ]
-      },
-      "131": {
-        "0": [
-          "Win a raid",
-          "Explore 2 km"
-        ]
-      },
-      "147": {
-        "0": [
-          "Make 2 Excellent Throws",
-          "Catch a Dragon-type Pokémon"
-        ]
-      },
-      "824": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "79": {
-        "0": [
-          "Spin 5 PokéStops or Gyms",
-          "Explore 2 km"
-        ]
-      },
-      "27": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "138": {
-        "0": [
-          "Make 3 Great Throws"
-        ]
-      },
-      "846": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "217": {
-        "0": [
-          "Evolve a Pokémon"
-        ]
-      },
-      "672": {
-        "0": [
-          "Catch 10 Grass-type Pokémon"
-        ]
-      },
-      "92": {
-        "0": [
-          "Catch 10 Ghost-type Pokémon"
-        ]
-      },
-      "580": {
-        "0": [
-          "Spin 5 PokéStops"
         ]
       },
       "759": {
@@ -558,211 +213,35 @@
           "Catch 7 Pokémon"
         ]
       },
-      "143": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "928": {
-        "0": [
-          "Catch 10 Grass-type Pokémon",
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "74": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "361": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "58": {
-        "0": [
-          "Explore 2 km",
-          "Spin 5 PokéStops or Gyms"
-        ]
-      },
-      "702": {
-        "0": [
-          "Earn 2 Candies walking with your buddy",
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "7": {
-        "0": [
-          "Power up Pokémon 3 times"
-        ]
-      },
-      "326": {
-        "0": [
-          "Evolve a Pokémon"
-        ]
-      },
-      "919": {
-        "0": [
-          "Make 10 Nice Throws"
-        ]
-      },
-      "425": {
-        "0": [
-          "Catch 10 Ghost-type Pokémon"
-        ]
-      },
-      "261": {
-        "0": [
-          "Catch 10 Dark-type Pokémon"
-        ]
-      },
-      "183": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "126": {
-        "0": [
-          "Make 10 Nice Throws"
-        ]
-      },
-      "136": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "110": {
-        "0": [
-          "Defeat a Team GO Rocket Grunt"
-        ]
-      },
-      "610": {
-        "0": [
-          "Catch a Dragon-type Pokémon"
-        ]
-      },
-      "364": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "562": {
-        "0": [
-          "Catch 10 Ghost-type Pokémon"
-        ]
-      },
-      "618": {
-        "0": [
-          "Earn 3 Candies walking with your buddy",
-          "Make 10 Nice Throws"
-        ]
-      },
-      "285": {
-        "0": [
-          "Catch 10 Grass-type Pokémon"
-        ]
-      },
-      "554": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "366": {
-        "0": [
-          "Make 3 Great Throws"
-        ]
-      },
-      "198": {
-        "0": [
-          "Catch 10 Dark-type Pokémon"
-        ]
-      },
-      "767": {
-        "0": [
-          "Catch 7 Pokémon",
-          "Hatch an Egg"
-        ]
-      },
-      "582": {
-        "0": [
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "819": {
-        "0": [
-          "Spin 5 PokéStops"
-        ]
-      },
-      "692": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "444": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "524": {
-        "0": [
-          "Make 10 Nice Throws",
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "501": {
-        "0": [
-          "Power up Pokémon 5 times"
-        ]
-      },
-      "327": {
-        "0": [
-          "Make 5 Great Curveball Throws in a row"
-        ]
-      },
-      "531": {
-        "0": [
-          "Hatch an Egg"
-        ]
-      },
-      "135": {
-        "0": [
-          "Win a raid"
-        ]
-      },
-      "397": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "345": {
-        "0": [
-          "Hatch an Egg",
-          "Make 3 Great Throws in a row"
-        ]
-      },
-      "223": {
-        "0": [
-          "Spin 3 PokéStops or Gyms"
-        ]
-      },
-      "353": {
-        "0": [
-          "Catch 10 Ghost-type Pokémon"
-        ]
-      },
-      "61": {
-        "0": [
-          "Trade a Pokémon"
-        ]
-      },
       "453": {
         "0": [
           "Take a snapshot of a wild Pokémon"
         ]
       },
-      "67": {
+      "973": {
         "0": [
-          "Trade a Pokémon"
+          "Catch 10 Pokémon"
+        ]
+      },
+      "971": {
+        "0": [
+          "Catch 10 Pokémon"
+        ]
+      },
+      "217": {
+        "0": [
+          "Evolve a Pokémon"
+        ]
+      },
+      "728": {
+        "0": [
+          "Power up Pokémon 7 times"
+        ]
+      },
+      "546": {
+        "0": [
+          "Catch 10 Pokémon",
+          "Take a snapshot of a wild Pokémon"
         ]
       },
       "271": {
@@ -775,14 +254,24 @@
           "Evolve a Pokémon"
         ]
       },
-      "662": {
+      "206": {
         "0": [
-          "Win a raid"
+          "Spin 5 PokéStops"
         ]
       },
-      "228": {
+      "123": {
         "0": [
-          "Explore 2 km"
+          "Hatch an Egg"
+        ]
+      },
+      "285": {
+        "0": [
+          "Catch 10 Grass-type Pokémon"
+        ]
+      },
+      "74": {
+        "0": [
+          "Make 10 Curveball Throws"
         ]
       },
       "216": {
@@ -790,29 +279,70 @@
           "Catch 7 different species of Pokémon"
         ]
       },
-      "747": {
-        "0": [
-          "Make 10 Nice Throws"
-        ]
-      },
-      "206": {
+      "917": {
         "0": [
           "Spin 5 PokéStops"
         ]
       },
-      "932": {
+      "327": {
+        "0": [
+          "Make 5 Great Curveball Throws in a row"
+        ]
+      },
+      "110": {
+        "0": [
+          "Defeat a Team GO Rocket Grunt"
+        ]
+      },
+      "926": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "375": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "507": {
+        "0": [
+          "Explore 2 km"
+        ]
+      },
+      "742": {
+        "0": [
+          "Catch 7 different species of Pokémon"
+        ]
+      },
+      "580": {
         "0": [
           "Spin 5 PokéStops"
         ]
       },
-      "140": {
+      "183": {
         "0": [
-          "Make 3 Great Throws"
+          "Catch 7 different species of Pokémon"
         ]
       },
-      "667": {
+      "662": {
         "0": [
+          "Win a raid"
+        ]
+      },
+      "39": {
+        "0": [
+          "Send 3 Gifts and add a sticker to each",
           "Earn 2 Candies walking with your buddy"
+        ]
+      },
+      "509": {
+        "0": [
+          "Catch 10 Dark-type Pokémon"
+        ]
+      },
+      "119": {
+        "0": [
+          "Catch 7 different species of Pokémon"
         ]
       },
       "660": {
@@ -820,19 +350,43 @@
           "Evolve a Pokémon"
         ]
       },
-      "722": {
+      "672": {
         "0": [
-          "Power up Pokémon 7 times"
+          "Catch 10 Grass-type Pokémon"
         ]
       },
-      "64": {
+      "345": {
+        "0": [
+          "Make 3 Great Throws in a row",
+          "Hatch an Egg"
+        ]
+      },
+      "133": {
+        "0": [
+          "Evolve a Pokémon",
+          "Send 3 Gifts and add a sticker to each"
+        ]
+      },
+      "131": {
+        "0": [
+          "Win a raid",
+          "Explore 2 km"
+        ]
+      },
+      "136": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "61": {
         "0": [
           "Trade a Pokémon"
         ]
       },
-      "597": {
+      "928": {
         "0": [
-          "Make 10 Curveball Throws"
+          "Catch 10 Grass-type Pokémon",
+          "Catch 7 different species of Pokémon"
         ]
       },
       "495": {
@@ -840,74 +394,31 @@
           "Power up Pokémon 5 times"
         ]
       },
-      "659": {
+      "35": {
         "0": [
-          "Earn 2 Candies walking with your buddy"
+          "Send 3 Gifts and add a sticker to each"
         ]
       },
-      "77": {
+      "176": {
         "0": [
-          "Explore 2 km"
+          "Send 3 Gifts and add a sticker to each"
         ]
       },
-      "58-2792": {
+      "751": {
         "0": [
-          "Spin 5 PokéStops or Gyms"
+          "Spin 5 PokéStops"
         ]
       },
-      "355": {
+      "767": {
         "0": [
-          "Catch 10 Ghost-type Pokémon"
-        ]
-      },
-      "333": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "415": {
-        "0": [
+          "Catch 7 Pokémon",
           "Hatch an Egg"
         ]
       },
-      "304": {
+      "147": {
         "0": [
-          "Spin 3 PokéStops or Gyms"
-        ]
-      },
-      "54": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "510": {
-        "0": [
-          "Catch 7 different species of Pokémon"
-        ]
-      },
-      "544": {
-        "0": [
-          "Evolve a Pokémon"
-        ]
-      },
-      "587": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "37": {
-        "0": [
-          "Catch 5 Pokémon with Weather Boost"
-        ]
-      },
-      "296": {
-        "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "356": {
-        "0": [
-          "Make 10 Curveball Throws"
+          "Make 2 Excellent Throws",
+          "Catch a Dragon-type Pokémon"
         ]
       },
       "725": {
@@ -915,12 +426,33 @@
           "Power up Pokémon 7 times"
         ]
       },
-      "164": {
+      "371": {
         "0": [
+          "Catch a Dragon-type Pokémon"
+        ]
+      },
+      "52": {
+        "0": [
+          "Defeat a Team GO Rocket Grunt"
+        ]
+      },
+      "548": {
+        "0": [
+          "Catch 10 Grass-type Pokémon"
+        ]
+      },
+      "568": {
+        "0": [
+          "Spin 5 PokéStops",
           "Hatch an Egg"
         ]
       },
-      "431": {
+      "366": {
+        "0": [
+          "Make 3 Great Throws"
+        ]
+      },
+      "659": {
         "0": [
           "Earn 2 Candies walking with your buddy"
         ]
@@ -930,9 +462,25 @@
           "Spin 3 PokéStops or Gyms"
         ]
       },
-      "4": {
+      "347": {
         "0": [
-          "Power up Pokémon 3 times"
+          "Hatch an Egg",
+          "Make 3 Great Throws in a row"
+        ]
+      },
+      "304": {
+        "0": [
+          "Spin 3 PokéStops or Gyms"
+        ]
+      },
+      "273": {
+        "0": [
+          "Catch 10 Grass-type Pokémon"
+        ]
+      },
+      "562": {
+        "0": [
+          "Catch 10 Ghost-type Pokémon"
         ]
       },
       "498": {
@@ -940,50 +488,43 @@
           "Power up Pokémon 5 times"
         ]
       },
-      "219": {
+      "198": {
         "0": [
-          "Evolve a Pokémon"
+          "Catch 10 Dark-type Pokémon"
         ]
       },
-      "1": {
+      "24": {
         "0": [
-          "Power up Pokémon 3 times"
+          "Defeat a Team GO Rocket Grunt"
         ]
       },
-      "568": {
+      "135": {
         "0": [
-          "Spin 5 PokéStops",
-          "Hatch an Egg"
+          "Win a raid"
         ]
       },
-      "123": {
+      "79": {
         "0": [
-          "Hatch an Egg"
+          "Explore 2 km",
+          "Spin 5 PokéStops or Gyms"
         ]
       },
-      "125": {
+      "191": {
         "0": [
-          "Make 10 Curveball Throws"
-        ]
-      },
-      "564": {
-        "0": [
-          "Win a three-star raid or higher"
-        ]
-      },
-      "274": {
-        "0": [
+          "Catch 10 Grass-type Pokémon",
           "Make 10 Nice Throws"
         ]
       },
-      "349": {
+      "215": {
         "0": [
-          "Hatch 2 Eggs"
+          "Catch 10 Dark-type Pokémon",
+          "Hatch 2 Eggs",
+          "Spin 5 PokéStops"
         ]
       },
-      "290": {
+      "77": {
         "0": [
-          "Hatch an Egg"
+          "Explore 2 km"
         ]
       },
       "246": {
@@ -991,17 +532,445 @@
           "Make 3 Excellent Throws in a row"
         ]
       },
-      "371": {
+      "50": {
         "0": [
-          "Catch a Dragon-type Pokémon"
+          "Make 5 Nice Throws"
         ]
       },
-      "374": {
+      "356": {
         "0": [
-          "Make 3 Excellent Throws in a row"
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "280": {
+        "0": [
+          "Spin 3 PokéStops or Gyms"
+        ]
+      },
+      "37": {
+        "0": [
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "622": {
+        "0": [
+          "Catch 10 Ghost-type Pokémon"
+        ]
+      },
+      "326": {
+        "0": [
+          "Evolve a Pokémon"
+        ]
+      },
+      "554": {
+        "0": [
+          "Catch 7 different species of Pokémon"
+        ]
+      },
+      "510": {
+        "0": [
+          "Catch 7 different species of Pokémon"
+        ]
+      },
+      "263": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "117": {
+        "0": [
+          "Evolve a Pokémon"
+        ]
+      },
+      "364": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "431": {
+        "0": [
+          "Earn 2 Candies walking with your buddy"
+        ]
+      },
+      "427": {
+        "0": [
+          "Earn 2 Candies walking with your buddy"
+        ]
+      },
+      "544": {
+        "0": [
+          "Evolve a Pokémon"
+        ]
+      },
+      "92": {
+        "0": [
+          "Catch 10 Ghost-type Pokémon"
+        ]
+      },
+      "449": {
+        "0": [
+          "Spin 5 PokéStops",
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "932": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "261": {
+        "0": [
+          "Catch 10 Dark-type Pokémon"
+        ]
+      },
+      "564": {
+        "0": [
+          "Win a three-star raid or higher"
+        ]
+      },
+      "702": {
+        "0": [
+          "Catch 7 different species of Pokémon",
+          "Earn 2 Candies walking with your buddy"
+        ]
+      },
+      "134": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "827": {
+        "0": [
+          "Catch 10 Dark-type Pokémon"
+        ]
+      },
+      "103": {
+        "0": [
+          "Win 5 raids"
+        ]
+      },
+      "7": {
+        "0": [
+          "Power up Pokémon 3 times"
+        ]
+      },
+      "501": {
+        "0": [
+          "Power up Pokémon 5 times"
+        ]
+      },
+      "328": {
+        "0": [
+          "Take a snapshot of a wild Pokémon"
+        ]
+      },
+      "722": {
+        "0": [
+          "Power up Pokémon 7 times"
+        ]
+      },
+      "355": {
+        "0": [
+          "Catch 10 Ghost-type Pokémon"
         ]
       },
       "343": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "228": {
+        "0": [
+          "Explore 2 km"
+        ]
+      },
+      "58-2792": {
+        "0": [
+          "Spin 5 PokéStops or Gyms"
+        ]
+      },
+      "27": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "129": {
+        "0": [
+          "Catch 7 Pokémon",
+          "Make 10 Nice Throws"
+        ]
+      },
+      "219": {
+        "0": [
+          "Evolve a Pokémon"
+        ]
+      },
+      "67": {
+        "0": [
+          "Trade a Pokémon"
+        ]
+      },
+      "692": {
+        "0": [
+          "Catch 7 different species of Pokémon"
+        ]
+      },
+      "531": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "618": {
+        "0": [
+          "Earn 3 Candies walking with your buddy",
+          "Make 10 Nice Throws"
+        ]
+      },
+      "333": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "819": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "404": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "54": {
+        "0": [
+          "Catch 7 different species of Pokémon"
+        ]
+      },
+      "1": {
+        "0": [
+          "Power up Pokémon 3 times"
+        ]
+      },
+      "143": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "459": {
+        "0": [
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "434": {
+        "0": [
+          "Catch 7 different species of Pokémon"
+        ]
+      },
+      "613": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "524": {
+        "0": [
+          "Make 10 Nice Throws",
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "399": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "688": {
+        "0": [
+          "Make 3 Great Throws"
+        ]
+      },
+      "126": {
+        "0": [
+          "Make 10 Nice Throws"
+        ]
+      },
+      "140": {
+        "0": [
+          "Make 3 Great Throws"
+        ]
+      },
+      "353": {
+        "0": [
+          "Catch 10 Ghost-type Pokémon"
+        ]
+      },
+      "64": {
+        "0": [
+          "Trade a Pokémon"
+        ]
+      },
+      "223": {
+        "0": [
+          "Spin 3 PokéStops or Gyms"
+        ]
+      },
+      "915": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "597": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "79-g": {
+        "0": [
+          "Explore 2 km",
+          "Spin 5 PokéStops or Gyms"
+        ]
+      },
+      "582": {
+        "0": [
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "60": {
+        "0": [
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "566": {
+        "0": [
+          "Win a three-star raid or higher"
+        ]
+      },
+      "425": {
+        "0": [
+          "Catch 10 Ghost-type Pokémon"
+        ]
+      },
+      "846": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "686": {
+        "0": [
+          "Catch 10 Dark-type Pokémon"
+        ]
+      },
+      "105": {
+        "0": [
+          "Hatch an Egg",
+          "Win 5 raids"
+        ]
+      },
+      "824": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "4": {
+        "0": [
+          "Power up Pokémon 3 times"
+        ]
+      },
+      "58": {
+        "0": [
+          "Explore 2 km",
+          "Spin 5 PokéStops or Gyms"
+        ]
+      },
+      "587": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "138": {
+        "0": [
+          "Make 3 Great Throws"
+        ]
+      },
+      "667": {
+        "0": [
+          "Earn 2 Candies walking with your buddy"
+        ]
+      },
+      "608": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "290": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "415": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "142": {
+        "0": [
+          "Win 5 raids"
+        ]
+      },
+      "278": {
+        "0": [
+          "Catch 5 Pokémon with Weather Boost"
+        ]
+      },
+      "164": {
+        "0": [
+          "Hatch an Egg"
+        ]
+      },
+      "397": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "732": {
+        "0": [
+          "Make 10 Nice Throws"
+        ]
+      },
+      "274": {
+        "0": [
+          "Make 10 Nice Throws"
+        ]
+      },
+      "93": {
+        "0": [
+          "Trade a Pokémon"
+        ]
+      },
+      "747": {
+        "0": [
+          "Make 10 Nice Throws"
+        ]
+      },
+      "320": {
+        "0": [
+          "Explore 2 km"
+        ]
+      },
+      "296": {
+        "0": [
+          "Make 10 Curveball Throws"
+        ]
+      },
+      "444": {
+        "0": [
+          "Win a raid"
+        ]
+      },
+      "919": {
+        "0": [
+          "Make 10 Nice Throws"
+        ]
+      },
+      "125": {
         "0": [
           "Make 10 Curveball Throws"
         ]
@@ -1010,15 +979,56 @@
         "0": [
           "Make 3 Excellent Throws in a row"
         ]
+      },
+      "361": {
+        "0": [
+          "Spin 5 PokéStops"
+        ]
+      },
+      "185": {
+        "0": [
+          "Hatch an Egg",
+          "Make 5 Nice Throws"
+        ]
+      },
+      "610": {
+        "0": [
+          "Catch a Dragon-type Pokémon"
+        ]
+      },
+      "303": {
+        "0": [
+          "Hatch 2 Eggs"
+        ]
+      },
+      "349": {
+        "0": [
+          "Hatch 2 Eggs"
+        ]
+      },
+      "374": {
+        "0": [
+          "Make 3 Excellent Throws in a row"
+        ]
       }
     },
     "12": {
+      "302": {
+        "25": [
+          "Mega Evolve a Pokémon"
+        ]
+      },
       "15": {
         "25": [
           "Mega Evolve a Pokémon"
         ],
         "10": [
           "Power up Pokémon 5 times"
+        ]
+      },
+      "229": {
+        "25": [
+          "Mega Evolve a Pokémon"
         ]
       },
       "310": {
@@ -1029,25 +1039,9 @@
           "Power up Pokémon 5 times"
         ]
       },
-      "302": {
-        "25": [
-          "Mega Evolve a Pokémon"
-        ]
-      },
-      "229": {
-        "25": [
-          "Mega Evolve a Pokémon"
-        ]
-      },
       "257": {
         "10": [
           "Catch 10 Fire-type Pokémon"
-        ]
-      },
-      "9": {
-        "10": [
-          "Catch 10 Water-type Pokémon",
-          "Power up Pokémon 5 times"
         ]
       },
       "3": {
@@ -1056,21 +1050,10 @@
           "Power up Pokémon 5 times"
         ]
       },
-      "18": {
-        "10": [
-          "Power up Pokémon 5 times",
-          "Catch 10 Normal-type Pokémon"
-        ]
-      },
       "6": {
         "10": [
-          "Catch 10 Fire-type Pokémon",
-          "Power up Pokémon 5 times"
-        ]
-      },
-      "254": {
-        "10": [
-          "Catch 10 Grass-type Pokémon"
+          "Power up Pokémon 5 times",
+          "Catch 10 Fire-type Pokémon"
         ]
       },
       "306": {
@@ -1078,9 +1061,26 @@
           "Power up Pokémon 5 times"
         ]
       },
+      "9": {
+        "10": [
+          "Power up Pokémon 5 times",
+          "Catch 10 Water-type Pokémon"
+        ]
+      },
+      "18": {
+        "10": [
+          "Catch 10 Normal-type Pokémon",
+          "Power up Pokémon 5 times"
+        ]
+      },
       "260": {
         "10": [
           "Catch 10 Water-type Pokémon"
+        ]
+      },
+      "254": {
+        "10": [
+          "Catch 10 Grass-type Pokémon"
         ]
       }
     }
@@ -1100,7 +1100,7 @@
     },
     "https://nycpokemap.com": {
       "state": "available",
-      "updated_at": "2026-11-25T06:00:40Z"
+      "updated_at": "2026-11-26T06:00:37Z"
     },
     "https://vanpokemap.com": {
       "state": "empty",
