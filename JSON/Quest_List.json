@@ -169,8 +169,7 @@
         ],
         "1500": [
           "Catch a Ditto",
-          "Make 3 Great Curveball Throws in a row",
-          "Catch a Dragon-type Pokémon"
+          "Make 3 Great Curveball Throws in a row"
         ]
       }
     },
@@ -1005,16 +1004,6 @@
         "0": [
           "Catch a Dragon-type Pokémon"
         ]
-      },
-      "371": {
-        "0": [
-          "Catch a Dragon-type Pokémon"
-        ]
-      },
-      "374": {
-        "0": [
-          "Make 3 Excellent Throws in a row"
-        ]
       }
     },
     "12": {
@@ -1096,8 +1085,8 @@
       "updated_at": "2026-11-27T12:59:31Z"
     },
     "https://sgpokemap.com": {
-      "state": "available",
-      "updated_at": "2026-11-26T20:30:52Z"
+      "state": "empty",
+      "updated_at": "2026-11-27T15:59:24Z"
     },
     "https://londonpogomap.com": {
       "state": "empty",
